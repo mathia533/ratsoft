@@ -1,0 +1,20 @@
+BackendBundle\Entity\TblImputaciones:
+    type: entity
+    table: tbl_imputaciones
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

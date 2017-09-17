@@ -3,9 +3,9 @@
 namespace BackendBundle\Entity;
 
 /**
- * User
+ * TblUser
  */
-class User
+class TblUser
 {
     /**
      * @var integer
@@ -38,19 +38,19 @@ class User
     private $email;
 
     /**
-     * @var string
+     * @var integer
      */
     private $role;
 
     /**
-     * @var boolean
+     * @var integer
      */
     private $activo;
 
     /**
      * @var \DateTime
      */
-    private $createdat;
+    private $createDate;
 
 
     /**
@@ -68,7 +68,7 @@ class User
      *
      * @param string $username
      *
-     * @return User
+     * @return TblUser
      */
     public function setUsername($username)
     {
@@ -92,7 +92,7 @@ class User
      *
      * @param string $password
      *
-     * @return User
+     * @return TblUser
      */
     public function setPassword($password)
     {
@@ -116,7 +116,7 @@ class User
      *
      * @param string $nombre
      *
-     * @return User
+     * @return TblUser
      */
     public function setNombre($nombre)
     {
@@ -140,7 +140,7 @@ class User
      *
      * @param string $apellido
      *
-     * @return User
+     * @return TblUser
      */
     public function setApellido($apellido)
     {
@@ -164,7 +164,7 @@ class User
      *
      * @param string $email
      *
-     * @return User
+     * @return TblUser
      */
     public function setEmail($email)
     {
@@ -186,9 +186,9 @@ class User
     /**
      * Set role
      *
-     * @param string $role
+     * @param integer $role
      *
-     * @return User
+     * @return TblUser
      */
     public function setRole($role)
     {
@@ -200,7 +200,7 @@ class User
     /**
      * Get role
      *
-     * @return string
+     * @return integer
      */
     public function getRole()
     {
@@ -210,9 +210,9 @@ class User
     /**
      * Set activo
      *
-     * @param boolean $activo
+     * @param integer $activo
      *
-     * @return User
+     * @return TblUser
      */
     public function setActivo($activo)
     {
@@ -224,7 +224,7 @@ class User
     /**
      * Get activo
      *
-     * @return boolean
+     * @return integer
      */
     public function getActivo()
     {
@@ -232,26 +232,27 @@ class User
     }
 
     /**
-     * Set createdat
+     * Set createDate
      *
-     * @param \DateTime $createdat
+     * @param \DateTime $createDate
      *
-     * @return User
+     * @return TblUser
      */
-    public function setCreatedat($createdat)
+    public function setCreateDate($createDate)
     {
-        $this->createdat = $createdat;
+        $this->createDate = $createDate;
 
         return $this;
     }
 
     /**
-     * Get createdat
+     * Get createDate
      *
      * @return \DateTime
      */
-    public function getCreatedat()
+    public function getCreateDate()
     {
-        return $this->createdat;
+        return $this->createDate;
     }
 }
+

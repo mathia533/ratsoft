@@ -1,0 +1,183 @@
+BackendBundle\Entity\TblCompras:
+    type: entity
+    table: tbl_compras
+    indexes:
+        FK_COMPROBANTE_idx:
+            columns:
+                - cod_comprobante
+        FK_TIPO_COMP_idx:
+            columns:
+                - tipo_comprobante
+        FK_IMPUTACION_idx:
+            columns:
+                - imputacion
+        FK_CLIENTES_idx:
+            columns:
+                - proveedor
+        FK_EMPRESA_COMPRA_idx:
+            columns:
+                - empresa
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechaIngreso:
+            type: date
+            nullable: false
+            column: fecha_ingreso
+        periodoMes:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'fijarse de meter algun enum para validar que vaya de 1 a 12 nomas'
+            column: periodo_mes
+        periodoAno:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: periodo_ano
+        fecha:
+            type: date
+            nullable: false
+        nroComprobante:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: nro_comprobante
+        cai:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+                default: '0'
+        neto105:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: neto_105
+        neto21:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: neto_21
+        neto27:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: neto_27
+        iva105:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: iva_105
+        iva21:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: iva_21
+        iva27:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: iva_27
+        nogravado:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+        exento:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+        percIva:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: perc_iva
+        percIibb:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: perc_iibb
+        retGanancia:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            column: ret_ganancia
+        total:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+    manyToOne:
+        codComprobante:
+            targetEntity: TblComprobantes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cod_comprobante:
+                    referencedColumnName: id
+            orphanRemoval: false
+        empresa:
+            targetEntity: TblEmpresas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                empresa:
+                    referencedColumnName: id
+            orphanRemoval: false
+        imputacion:
+            targetEntity: TblImputaciones
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                imputacion:
+                    referencedColumnName: id
+            orphanRemoval: false
+        proveedor:
+            targetEntity: TblProveedores
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                proveedor:
+                    referencedColumnName: id
+            orphanRemoval: false
+        tipoComprobante:
+            targetEntity: TblTiposComp
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                tipo_comprobante:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,26 @@
+BackendBundle\Entity\TblSituacionIva:
+    type: entity
+    table: tbl_situacion_iva
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        codigo:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        detalle:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

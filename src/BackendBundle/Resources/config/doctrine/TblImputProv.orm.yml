@@ -1,0 +1,35 @@
+BackendBundle\Entity\TblImputProv:
+    type: entity
+    table: tbl_imput_prov
+    indexes:
+        FK_IMPUT_idx:
+            columns:
+                - id_imp
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        idProv:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_prov
+    manyToOne:
+        idImp:
+            targetEntity: TblImputaciones
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_imp:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,36 @@
+BackendBundle\Entity\TblTiposComp:
+    type: entity
+    table: tbl_tipos_comp
+    indexes:
+        FK_COD_COMP_idx:
+            columns:
+                - cod_comp
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        tipoComp:
+            type: string
+            nullable: false
+            length: 3
+            options:
+                fixed: false
+            column: tipo_comp
+    manyToOne:
+        codComp:
+            targetEntity: TblComprobantes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cod_comp:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

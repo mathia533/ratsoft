@@ -1,0 +1,145 @@
+BackendBundle\Entity\TblVentas:
+    type: entity
+    table: tbl_ventas
+    indexes:
+        FK_COMPROBANTE_idx:
+            columns:
+                - cod_comprobante
+        FK_TIPO_COMP_idx:
+            columns:
+                - tipo_comprobante
+        FK_CLIENTES_idx:
+            columns:
+                - cliente
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        periodoMes:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: periodo_mes
+        periodoAno:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: periodo_ano
+        fecha:
+            type: date
+            nullable: false
+        nroComprobante:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: nro_comprobante
+        netoReventa:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: neto_reventa
+        netoFabric:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: neto_fabric
+        netoExento:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: neto_exento
+        ivaRi:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: iva_ri
+        ivaRni:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: iva_rni
+        ivaSnc:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: iva_snc
+        ivaMon:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: iva_mon
+        ivaCf:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: iva_cf
+        ivaExento:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            column: iva_exento
+        retencion:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+        percepcion:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+        total:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+    manyToOne:
+        cliente:
+            targetEntity: TblProveedores
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cliente:
+                    referencedColumnName: id
+            orphanRemoval: false
+        codComprobante:
+            targetEntity: TblComprobantes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cod_comprobante:
+                    referencedColumnName: id
+            orphanRemoval: false
+        tipoComprobante:
+            targetEntity: TblTiposComp
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                tipo_comprobante:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
