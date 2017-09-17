@@ -1,0 +1,60 @@
+﻿-- RatSoft --
+------------------------------------------------------------------------------------------------------------|
+------------------------------------------------------------------------------------------------------------|
+
+esto tiene que desaparecer
+
+|-------------------|
+|-- Base de datos --|
+|-------------------|
+
+1) Crear/Modificar la base de datos en MySql.
+
+2) Mapeo de la base de datos.
+El siguiente comando mapea la DB con la aplicacion mediante archivos .yml
+PASOS:
+	a) Abrir la consola CMD
+	b) Ubicarse dentro de la carpeta del proyecto (ratsoft)
+	c) Ejecutar el comando: php bin/console doctrine:mapping:import BackendBundle yml
+
+3) Generar las entidades.
+El siguiente comando genera las entidades de la DB que se encuentren mapeadas.
+PASOS:
+	a) Abrir la consola CMD
+	b) Ubicarse dentro de la carpeta del proyecto (ratsoft)
+	c) Ejecutar el comando: php bin/console doctrine:generate:entities BackendBundle
+
+------------------------------------------------------------------------------------------------------------|
+------------------------------------------------------------------------------------------------------------|
+
+|-------------------|
+|------ API --------|
+|-------------------|
+
+Paths: /
+-------------------------------
+Función: Login
+Datos de entrada: emai, password
+Ruta: /login
+Metodo: POST
+Descripción: Recibe un email/password por request, para retornar una sesión de login en caso de que el usuario exista.
+------------------------
+Función: Autenticación
+Datos de entrada (obligatorios): hash
+Datos de entrada (Opcionales): (true/null)
+Ruta: /autenticacion
+Metodo: POST
+Descripción: Recibe un hash y valida si el usuario aun está autenticado. Si sólo se envía el hash (por Request), retorna los datos del usuario en sesión. Si se envía un segundo parámetro como True, retorna un booleano con el estado del usuario, es decir, si se encuentra o no autenticad (True o False).
+
+
+
+Paths: /user
+-------------------------------
+Función: Registro de usuario
+Datos de entrada (obligatorios): username, password, nombre, apellido, email
+Datos de entrada (Opcionales): role
+Ruta: /user/new
+Metodo: POST
+Descripción: Recibe datos de un usuario por request, para retornar si el usuario ha sido registrado. 
+Por defecto, todos los usuarios se crean con estado Activo = True. 
+Todos los usuarios serán creados con el Rol = USER, en caso de no ser especificado.
