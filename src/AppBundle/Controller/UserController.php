@@ -8,6 +8,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\HttpFoundation\Response;
 use BackendBundle\Entity\User;
+use BackendBundle\Entity\TblRubros;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
 
 class UserController extends Controller
 {
@@ -117,4 +120,39 @@ class UserController extends Controller
     		'msg' => 'El usuario no pudo ser creado.'
     	);
 	}
+
+    public function listAction(Request $request){
+     /*   // Cargo los servicios que voy a utilizar.
+        $helpers = $this->get('app.helpers');
+        $serializer = SerializerBuilder::create()->build();
+
+        // Recupero el hash recibido
+        $json = $request->get('authorization', null);
+
+        // Pregunto al servicio si el hash es auténtico.
+        $authCheck = $helpers->authCheck($hash);
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('select u from TblRubros u');
+        $rubros = $query->getResult();
+        $jsonResponse = $serializer->serialize($rubros, 'json');
+        return new Response($jsonResponse);
+    */
+        $helpers = $this->get('app.helpers');
+        $serializer = SerializerBuilder::create()->build();
+        
+        $em = $this->getDoctrine()->getManager();
+        
+        $empresas = $em->getRepository("BackendBundle:TblEmpresas")->findAll();
+        
+        // $rubros = $query->getResult();
+        /*$data = array(
+            'status' => 'ERROR',
+            'msg' => 'El usuario no pudo ser creado.'
+        );
+        */
+        $jsonResponse = $serializer->serialize($empresas, 'json');
+        return new Response($jsonResponse);
+        
+    }
 }
