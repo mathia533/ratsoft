@@ -1,0 +1,4 @@
+empresas_home:
+    path: /home
+    defaults: { _controller: "AppBundle:Empresas:index" }
+    methods: GET
