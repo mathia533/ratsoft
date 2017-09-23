@@ -8,4 +8,4 @@ app_user:
 
 app_empresas:
   resource: "@AppBundle/Resources/config/routing/empresas.yml"
-  prefix: /empresas
+  prefix: /empresa
