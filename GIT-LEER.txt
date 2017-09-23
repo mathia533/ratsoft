@@ -6,6 +6,11 @@ cd ratsoft
 
 composer install (esto lo tenes que hacer para que meta todas las dependencias de proyecto, sino no funca)
 
+clonar un branch en particular:
+-------------------------------
+git clone -b <branch> --single-branch <url>
+
+
 Si estuviste laburando en tu PC y queres subir los cambios:
 -----------------------------------------------------------
 git add . (asi con el puntito al final)
