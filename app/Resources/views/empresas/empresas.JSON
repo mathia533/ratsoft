@@ -1,0 +1,2738 @@
+[
+    {
+        "id": 1,
+        "nombre": "BOMBARDIERE MARIA LAURA",
+        "domicilio": "calle 0001",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456789,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 1,
+            "nombre": " Ciudad de Buenos Aires"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 2,
+        "nombre": "ALATA GUTIERREZ EULOGIO G.",
+        "domicilio": "calle 0002",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456790,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 2,
+            "nombre": " Provincia de Buenos Aires"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 4,
+        "nombre": "ROJAS MARISOL ARIADNA",
+        "domicilio": "calle 0003",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456791,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 3,
+            "nombre": " Catamarca"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 6,
+        "nombre": "COBATEX S.R.L.",
+        "domicilio": "calle 0004",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456792,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 4,
+            "nombre": " Córdoba"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 8,
+        "nombre": "BADOLATO ALEJANDRO",
+        "domicilio": "calle 0005",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456793,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 5,
+            "nombre": " Corrientes"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 9,
+        "nombre": "CARO RAUL",
+        "domicilio": "calle 0006",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456794,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 6,
+            "nombre": " Chaco"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 10,
+        "nombre": "IFRAN LORENZO",
+        "domicilio": "calle 0007",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456795,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 7,
+            "nombre": " Chubut"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 11,
+        "nombre": "GOMEZ MARINA MABEL",
+        "domicilio": "calle 0008",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456796,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 8,
+            "nombre": " Entre Ríos"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 12,
+        "nombre": "WACHUTYNSKI SANDRA",
+        "domicilio": "calle 0009",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456797,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 9,
+            "nombre": " Formosa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 15,
+        "nombre": "ASTRADA SILVIA ADRIANA",
+        "domicilio": "calle 0010",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456798,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 10,
+            "nombre": " Jujuy"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 21,
+        "nombre": "XANTHUS S.R.L.",
+        "domicilio": "calle 0011",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456799,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 11,
+            "nombre": " La Pampa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 22,
+        "nombre": "WINTOP S.R.L.",
+        "domicilio": "calle 0012",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456800,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 12,
+            "nombre": " La Rioja"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 23,
+        "nombre": "OLIMPIA RESIDENCE S.R.L.",
+        "domicilio": "calle 0013",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456801,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 13,
+            "nombre": " Mendoza"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 24,
+        "nombre": "MAOUR VICTOR A.",
+        "domicilio": "calle 0014",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456802,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 14,
+            "nombre": " Misiones"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 29,
+        "nombre": "DOBLE BOGY SRL",
+        "domicilio": "calle 0015",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456803,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 15,
+            "nombre": " Neuquén"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 30,
+        "nombre": "CHATZKY DIEGO",
+        "domicilio": "calle 0016",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456804,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 16,
+            "nombre": " Rí\u00ado Negro"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 31,
+        "nombre": "YANSENSON VICTOR ALBERTO",
+        "domicilio": "calle 0017",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456805,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 17,
+            "nombre": " Salta"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 32,
+        "nombre": "MUMBAI SRL",
+        "domicilio": "calle 0018",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456806,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 18,
+            "nombre": " San Juan"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 33,
+        "nombre": "AF TRADE S.R.L.",
+        "domicilio": "calle 0019",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456807,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 19,
+            "nombre": " San Luis"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 35,
+        "nombre": "BOBBIO MARIELA LAURA",
+        "domicilio": "calle 0020",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456808,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 20,
+            "nombre": " Santa Cruz"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 36,
+        "nombre": "CHATZKY SERGIO",
+        "domicilio": "calle 0021",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456809,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 21,
+            "nombre": " Santa Fe"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 37,
+        "nombre": "SEIDMANN FABIAN",
+        "domicilio": "calle 0022",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456810,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 22,
+            "nombre": " Santiago del Estero"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 40,
+        "nombre": "BENIGNO SANTA",
+        "domicilio": "calle 0023",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456811,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 23,
+            "nombre": " Tierra del Fuego"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 41,
+        "nombre": "ROJAS MARSOLLIER EDUARDO A.",
+        "domicilio": "calle 0024",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456812,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 24,
+            "nombre": "Tucumán"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 42,
+        "nombre": "TRINO EDUARDO PEDRO",
+        "domicilio": "calle 0025",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456813,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 1,
+            "nombre": " Ciudad de Buenos Aires"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 43,
+        "nombre": "SAVITRI SRL",
+        "domicilio": "calle 0026",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456814,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 2,
+            "nombre": " Provincia de Buenos Aires"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 44,
+        "nombre": "OKREGALOS.COM S.R.L.",
+        "domicilio": "calle 0027",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456815,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 3,
+            "nombre": " Catamarca"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 46,
+        "nombre": "PLAZA FAN SA",
+        "domicilio": "calle 0028",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456816,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 4,
+            "nombre": " Córdoba"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 52,
+        "nombre": "KADARIAN DANIEL MARCELO",
+        "domicilio": "calle 0029",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456817,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 5,
+            "nombre": " Corrientes"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 53,
+        "nombre": "DUARTE SINDULFO",
+        "domicilio": "calle 0030",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456818,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 6,
+            "nombre": " Chaco"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 54,
+        "nombre": "ORSI MARCELA VERONICA",
+        "domicilio": "calle 0031",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456819,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 7,
+            "nombre": " Chubut"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 56,
+        "nombre": "MAOUR DIEGO MARTIN",
+        "domicilio": "calle 0032",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456820,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 8,
+            "nombre": " Entre Ríos"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 58,
+        "nombre": "CANTOS GLADYS",
+        "domicilio": "calle 0033",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456821,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 9,
+            "nombre": " Formosa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 59,
+        "nombre": "MASRI CELIA",
+        "domicilio": "calle 0034",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456822,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 10,
+            "nombre": " Jujuy"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 66,
+        "nombre": "MENGHANI RAKESH",
+        "domicilio": "calle 0035",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456823,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 11,
+            "nombre": " La Pampa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 67,
+        "nombre": "PEVERELLI JUAN CARLOS",
+        "domicilio": "calle 0036",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456824,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 12,
+            "nombre": " La Rioja"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 77,
+        "nombre": "AGUSTRADE S.R.L.",
+        "domicilio": "calle 0037",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456825,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 13,
+            "nombre": " Mendoza"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 78,
+        "nombre": "VELASTAR S.R.L.",
+        "domicilio": "calle 0038",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456826,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 14,
+            "nombre": " Misiones"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 81,
+        "nombre": "WIZA INVERSORA S.A.",
+        "domicilio": "calle 0039",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456827,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 15,
+            "nombre": " Neuquén"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 83,
+        "nombre": "MIMA IMPORT S.R.L.",
+        "domicilio": "calle 0040",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456828,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 16,
+            "nombre": " Rí\u00ado Negro"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 86,
+        "nombre": "BAZAR TOTAL S.R.L.",
+        "domicilio": "calle 0041",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456829,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 17,
+            "nombre": " Salta"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 88,
+        "nombre": "SEIDMANN FERMIN",
+        "domicilio": "calle 0042",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456830,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 18,
+            "nombre": " San Juan"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 91,
+        "nombre": "YANSENSON HERNAN MAURO",
+        "domicilio": "calle 0043",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456831,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 19,
+            "nombre": " San Luis"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 92,
+        "nombre": "CHATZKY DARIO",
+        "domicilio": "calle 0044",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456832,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 20,
+            "nombre": " Santa Cruz"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 95,
+        "nombre": "ROJAS FLAVIO ADRIAN",
+        "domicilio": "calle 0045",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456833,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 21,
+            "nombre": " Santa Fe"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 96,
+        "nombre": "MONTERO FEDERICO",
+        "domicilio": "calle 0046",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456834,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 22,
+            "nombre": " Santiago del Estero"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 102,
+        "nombre": "BERMAN DIEGO RUBEN",
+        "domicilio": "calle 0047",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456835,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 23,
+            "nombre": " Tierra del Fuego"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 106,
+        "nombre": "PETERSON NOELIA",
+        "domicilio": "calle 0048",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456836,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 24,
+            "nombre": "Tucumán"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 108,
+        "nombre": "FERNANDEZ  DELIA PASTOR",
+        "domicilio": "calle 0049",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456837,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 1,
+            "nombre": " Ciudad de Buenos Aires"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 113,
+        "nombre": "LA TELA S.R.L.",
+        "domicilio": "calle 0050",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456838,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 2,
+            "nombre": " Provincia de Buenos Aires"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 116,
+        "nombre": "GARDAE S.A.",
+        "domicilio": "calle 0051",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456839,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 3,
+            "nombre": " Catamarca"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 118,
+        "nombre": "VELAZQUEZ GABRIEL ALEJANDRO",
+        "domicilio": "calle 0052",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456840,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 4,
+            "nombre": " Córdoba"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 119,
+        "nombre": "MOLINA WALTER ALBINO",
+        "domicilio": "calle 0053",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456841,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 5,
+            "nombre": " Corrientes"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 120,
+        "nombre": "LUXTRADE S.R.L.",
+        "domicilio": "calle 0054",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456842,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 6,
+            "nombre": " Chaco"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 121,
+        "nombre": "KADARIAN GERARDO EDUARDO",
+        "domicilio": "calle 0055",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456843,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 7,
+            "nombre": " Chubut"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 122,
+        "nombre": "CLICK APARTS S.R.L.",
+        "domicilio": "calle 0056",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456844,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 8,
+            "nombre": " Entre Ríos"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 123,
+        "nombre": "PLAZA FAN RETENCIONES ARIB",
+        "domicilio": "calle 0057",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456845,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 9,
+            "nombre": " Formosa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 124,
+        "nombre": "PASTEUR 474 S.R.L.",
+        "domicilio": "calle 0058",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456846,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 10,
+            "nombre": " Jujuy"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 126,
+        "nombre": "BOCKU S.R.L.",
+        "domicilio": "calle 0059",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456847,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 11,
+            "nombre": " La Pampa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 127,
+        "nombre": "INMOBIMEX S.A.",
+        "domicilio": "calle 0060",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456848,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 12,
+            "nombre": " La Rioja"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 129,
+        "nombre": "CARIANNI JOSE",
+        "domicilio": "calle 0061",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456849,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 13,
+            "nombre": " Mendoza"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 130,
+        "nombre": "SILVA LUIS ALBERTO",
+        "domicilio": "calle 0062",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456850,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 14,
+            "nombre": " Misiones"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 131,
+        "nombre": "MEGANTEX S.R.L.",
+        "domicilio": "calle 0063",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456851,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 15,
+            "nombre": " Neuquén"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 132,
+        "nombre": "MENGHANI RAVI ANDRES",
+        "domicilio": "calle 0064",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456852,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 16,
+            "nombre": " Rí\u00ado Negro"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 133,
+        "nombre": "PETERSON ROMINA LAURA",
+        "domicilio": "calle 0065",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456853,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 17,
+            "nombre": " Salta"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 134,
+        "nombre": "BOMBARDIERE DIEGO HERNAN",
+        "domicilio": "calle 0066",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456854,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 18,
+            "nombre": " San Juan"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 135,
+        "nombre": "DAVILA MENSAJERIA S.R.L.",
+        "domicilio": "calle 0067",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456855,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 19,
+            "nombre": " San Luis"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 136,
+        "nombre": "LATIN BRICKS S.A.",
+        "domicilio": "calle 0068",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456856,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 20,
+            "nombre": " Santa Cruz"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 137,
+        "nombre": "AVILA HECTOR EDUARDO",
+        "domicilio": "calle 0069",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456857,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 21,
+            "nombre": " Santa Fe"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 138,
+        "nombre": "RADIO ELECTRONICS S.R.L.",
+        "domicilio": "calle 0070",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456858,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 22,
+            "nombre": " Santiago del Estero"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 139,
+        "nombre": "BLU MARLIN S.R.L.",
+        "domicilio": "calle 0071",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456859,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 23,
+            "nombre": " Tierra del Fuego"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 140,
+        "nombre": "GELUDA LEONARDO MARCELO",
+        "domicilio": "calle 0072",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456860,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 24,
+            "nombre": "Tucumán"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 141,
+        "nombre": "BALANI SALINA",
+        "domicilio": "calle 0073",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456861,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 1,
+            "nombre": " Ciudad de Buenos Aires"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 142,
+        "nombre": "CAMPELO JUAN JOSE",
+        "domicilio": "calle 0074",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456862,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 2,
+            "nombre": " Provincia de Buenos Aires"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 143,
+        "nombre": "CURCUMA S.R.L.",
+        "domicilio": "calle 0075",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456863,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 3,
+            "nombre": " Catamarca"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 144,
+        "nombre": "JYOTI MOTWANI",
+        "domicilio": "calle 0076",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456864,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 4,
+            "nombre": " Córdoba"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 145,
+        "nombre": "BERMAN ALAN",
+        "domicilio": "calle 0077",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456865,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 5,
+            "nombre": " Corrientes"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 146,
+        "nombre": "JAGPAT PANKAJ",
+        "domicilio": "calle 0078",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456866,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 6,
+            "nombre": " Chaco"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 147,
+        "nombre": "JAGTAP  TARUN",
+        "domicilio": "calle 0079",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456867,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 7,
+            "nombre": " Chubut"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 148,
+        "nombre": "GARCIA DIEGO E.",
+        "domicilio": "calle 0080",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456868,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 8,
+            "nombre": " Entre Ríos"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 149,
+        "nombre": "EFRAIN VEGA REAÑO",
+        "domicilio": "calle 0081",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456869,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 9,
+            "nombre": " Formosa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 150,
+        "nombre": "DÍAZ DELGADO EMILYA",
+        "domicilio": "calle 0082",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456870,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 10,
+            "nombre": " Jujuy"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 151,
+        "nombre": "PETASNY NORBERTO",
+        "domicilio": "calle 0083",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456871,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 11,
+            "nombre": " La Pampa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 152,
+        "nombre": "TOMASIELLO VANESA LORENA",
+        "domicilio": "calle 0084",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456872,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 12,
+            "nombre": " La Rioja"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 153,
+        "nombre": "WINTRADE S.A.",
+        "domicilio": "calle 0085",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456873,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 13,
+            "nombre": " Mendoza"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 154,
+        "nombre": "MINGO MEDIAS S.R.L.",
+        "domicilio": "calle 0086",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456874,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 14,
+            "nombre": " Misiones"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 155,
+        "nombre": "CHATZKY AXEL",
+        "domicilio": "calle 0087",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456875,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 15,
+            "nombre": " Neuquén"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 156,
+        "nombre": "MOHD ISTAYAZ",
+        "domicilio": "calle 0088",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456876,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 16,
+            "nombre": " Rí\u00ado Negro"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 157,
+        "nombre": "MEGHANI MANOJ KUMAR",
+        "domicilio": "calle 0089",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456877,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 17,
+            "nombre": " Salta"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 158,
+        "nombre": "MUNDO ACCESORIOS S.R.L",
+        "domicilio": "calle 0090",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456878,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 18,
+            "nombre": " San Juan"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 159,
+        "nombre": "DIAZ DELGADO LUIS",
+        "domicilio": "calle 0091",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456879,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 19,
+            "nombre": " San Luis"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 160,
+        "nombre": "SIPOS PEDRO",
+        "domicilio": "calle 0092",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456880,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 20,
+            "nombre": " Santa Cruz"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 161,
+        "nombre": "BEVACQUA ANA MARIA",
+        "domicilio": "calle 0093",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456881,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 21,
+            "nombre": " Santa Fe"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 162,
+        "nombre": "MOLTENI CRISTIAN G.",
+        "domicilio": "calle 0094",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456882,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 22,
+            "nombre": " Santiago del Estero"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 163,
+        "nombre": "MENAYED SEBASTIAN ISRAEL",
+        "domicilio": "calle 0095",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456883,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 23,
+            "nombre": " Tierra del Fuego"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 164,
+        "nombre": "ALTKORN MONTI PERLA",
+        "domicilio": "calle 0096",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456884,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 24,
+            "nombre": "Tucumán"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 165,
+        "nombre": "MENAYED YAIR ISRAEL",
+        "domicilio": "calle 0097",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456885,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 1,
+            "nombre": " Ciudad de Buenos Aires"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 166,
+        "nombre": "ESE SERVICIOS ELECTRICOS SRL",
+        "domicilio": "calle 0098",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456886,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 2,
+            "nombre": " Provincia de Buenos Aires"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 167,
+        "nombre": "TRADING MASTER S.R.L.",
+        "domicilio": "calle 0099",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456887,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 3,
+            "nombre": " Catamarca"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 168,
+        "nombre": "MARIA LLOPIZ ORTIZ",
+        "domicilio": "calle 0100",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456888,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 4,
+            "nombre": " Córdoba"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 169,
+        "nombre": "VERAMENDI AGAMA BELISSA",
+        "domicilio": "calle 0101",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456889,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 5,
+            "nombre": " Corrientes"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 170,
+        "nombre": "DE SOUND S.R.L.",
+        "domicilio": "calle 0102",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456890,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 6,
+            "nombre": " Chaco"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 171,
+        "nombre": "SAURA JOSÉ DANIEL",
+        "domicilio": "calle 0103",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456891,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 7,
+            "nombre": " Chubut"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 172,
+        "nombre": "IN SERVICIO ELECTRICO Y ELEC",
+        "domicilio": "calle 0104",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456892,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 8,
+            "nombre": " Entre Ríos"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 173,
+        "nombre": "PUMARRUMI DELIA",
+        "domicilio": "calle 0105",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456893,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 9,
+            "nombre": " Formosa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 174,
+        "nombre": "PUMARRUMI PONCIA",
+        "domicilio": "calle 0106",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456894,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 10,
+            "nombre": " Jujuy"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 175,
+        "nombre": "KIRSZENBAUM JORGE",
+        "domicilio": "calle 0107",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456895,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 11,
+            "nombre": " La Pampa"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 176,
+        "nombre": "NOVADART S.A.",
+        "domicilio": "calle 0108",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456896,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 12,
+            "nombre": " La Rioja"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 177,
+        "nombre": "MARCO HECTOR LUIS",
+        "domicilio": "calle 0109",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456897,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 1,
+            "codigo": "CF",
+            "detalle": "Consumidor Final"
+        },
+        "provincia": {
+            "id": 13,
+            "nombre": " Mendoza"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 178,
+        "nombre": "SEMRIK ELISABETH",
+        "domicilio": "calle 0110",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456898,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 2,
+            "codigo": "EXE",
+            "detalle": "Exento"
+        },
+        "provincia": {
+            "id": 14,
+            "nombre": " Misiones"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 179,
+        "nombre": "SALAMA ROSALINDA",
+        "domicilio": "calle 0111",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456899,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 3,
+            "codigo": "EXI",
+            "detalle": "Exento con IVA"
+        },
+        "provincia": {
+            "id": 15,
+            "nombre": " Neuquén"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 180,
+        "nombre": "ALAG S.R.L.",
+        "domicilio": "calle 0112",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456900,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 4,
+            "codigo": "MON",
+            "detalle": "Monotributista"
+        },
+        "provincia": {
+            "id": 16,
+            "nombre": " Rí\u00ado Negro"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    },
+    {
+        "id": 181,
+        "nombre": "MOREL CINTIA ROMINA",
+        "domicilio": "calle 0113",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456901,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 5,
+            "codigo": "RI",
+            "detalle": "Responsable Inscripto"
+        },
+        "provincia": {
+            "id": 17,
+            "nombre": " Salta"
+        },
+        "rubro": {
+            "id": 1,
+            "nombre": "gatronomia",
+            "servicio": 1
+        }
+    },
+    {
+        "id": 182,
+        "nombre": "COHEN CLAUDIO SALOMON",
+        "domicilio": "calle 0114",
+        "localidad": "CABA",
+        "cuit": 2147483647,
+        "iibb": 123456902,
+        "titular": "John Doe",
+        "activo": 1,
+        "iva": {
+            "id": 6,
+            "codigo": "RNI",
+            "detalle": "Responsable no Inscripto"
+        },
+        "provincia": {
+            "id": 18,
+            "nombre": " San Juan"
+        },
+        "rubro": {
+            "id": 2,
+            "nombre": "venta",
+            "servicio": 0
+        }
+    }
+]
