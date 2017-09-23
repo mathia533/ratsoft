@@ -1,0 +1,57 @@
+clonar el projecto por primera vez:
+-----------------------------------
+git clone <url>
+
+cd ratsoft
+
+composer install (esto lo tenes que hacer para que meta todas las dependencias de proyecto, sino no funca)
+
+Si estuviste laburando en tu PC y queres subir los cambios:
+-----------------------------------------------------------
+git add . (asi con el puntito al final)
+git commit -m "un texto descriptivo que diga o que estuviste haciendo"
+git push
+
+Si queres meter los cambios en un branch especifivo antes de lo anterior cambias al branch deseado:
+---------------------------------------------------------------------------------------------------
+git checkout <branch>
+git add . (asi con el puntito al final)
+git commit -m "un texto descriptivo que diga o que estuviste haciendo"
+git push
+
+Si queres meter los cambios en un brach que no existe y tenes que crearlo:
+--------------------------------------------------------------------------
+git checkout -b <nuevobranch>
+git add . (asi con el puntito al final)
+git commit -m "un texto descriptivo que diga o que estuviste haciendo"
+git push --set-upstream origin nuevobranch
+
+Si quieren ver todos los branchs que hay (y en que branch estan parados):
+-----------------------------------------
+git branch
+
+Si quieren borrar un branch:
+----------------------------
+git checkout <un branch distinto al que van a borrar>
+git branch -d <branch que van a borrar>
+
+Si quieren bajarse los cambios que se estuvieron metiendo:
+----------------------------------------------------------
+git remote update (esto para asegurar que estan visibles las diferencias entre lo que hay local y remoto)
+git status (te va a tirar info)
+git pull origin <branch> (te va a bajar los cambios)
+
+Puede darse el caso que lo anterior no te aplique los cambios porque vos tenes cambios en el mismo file y GIT interpreta que tus cambios son mas importantes):
+
+Para resolver eso:
+------------------
+git remote update (esto para asegurar que estan visibles las diferencias entre lo que hay local y remoto)
+git status (te va a tirar info)
+git reset --hard origin/<branch>
+git pull origin <branch>
+
+(ojo porque se caga en tus cambios y te pisa lo que hayas hecho si estabas trabajando en un archivo de los que va a actualizar)
+
+
+
+
