@@ -8,6 +8,12 @@ use Symfony\Component\HttpFoundation\Request;
 use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints as Assert;
+use BackendBundle\Entity\User;
+use BackendBundle\Entity\TblRubros;
+use BackendBundle\Entity\TblEmpresas;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
+
 
 class EmpresasController extends Controller
 {
@@ -19,7 +25,7 @@ class EmpresasController extends Controller
         ]);
     }
 
-    public function listEmpresas(Request $request){
+    public function listAction(Request $request){
      /*   // Cargo los servicios que voy a utilizar.
         $helpers = $this->get('app.helpers');
         $serializer = SerializerBuilder::create()->build();

@@ -2,3 +2,8 @@ empresas_home:
     path: /home
     defaults: { _controller: "AppBundle:Empresas:index" }
     methods: GET
+
+empresas_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Empresas:list" }
+    methods: POST
