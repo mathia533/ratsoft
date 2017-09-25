@@ -11,14 +11,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class DefaultController extends Controller
 {
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
-    }
-
     public function loginAction(Request $request) {
         // Cargo el Servicio jwt_auth para validar el login.
         $jwt_auth = $this->get('app.jwt_auth');

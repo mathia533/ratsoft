@@ -16,13 +16,15 @@ class JwtAuth
 	public function signup($email, $password, $getHash = NULL) {
 		$key = 'clave-secreta';
 
+		$psw = hash('sha256', $password);
+
 		// Busco en la DB si el usuario con el Email y Password del Request existe.
-		$user = $this->manager->getRepository('BackendBundle:User')->findOneBy(
+		$user = $this->manager->getRepository('BackendBundle:TblUser')->findOneBy(
 			array(
 				'email' => $email,
-				'password' => $password
-			)
-		);
+				'password' => $psw
+				)
+			);
 
 		$signup = false;
 		// Compruebo si es un objeto.
@@ -41,10 +43,10 @@ class JwtAuth
 				'email' => $user->getEmail(),
 				'role' => $user->getRole(),
 				'activo' => $user->getActivo(),
-				'createdat'=> $user->getCreatedat(),
+				'createdat'=> $user->getCreateDate(),
 				'iat' => time(), // Fecha creación Hash.
 				'exp' => time() + (5 * 10) // Fecha expiración Hash. 50seg masomenos
-			);
+				);
 
 			// Token encodeado..
 			$jwt = JWT::encode($token, $key, 'HS256');
@@ -62,7 +64,7 @@ class JwtAuth
 			return array(
 				'status' => 'ERROR',
 				'data' => 'Login fallido!'
-			);
+				);
 		}
 	}
 

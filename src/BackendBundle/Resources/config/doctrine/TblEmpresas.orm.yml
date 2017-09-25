@@ -40,7 +40,7 @@ BackendBundle\Entity\TblEmpresas:
             options:
                 fixed: false
         cuit:
-            type: integer
+            type: bigint
             nullable: true
             options:
                 unsigned: false

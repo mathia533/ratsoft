@@ -33,16 +33,16 @@ PASOS:
 
 Paths: /
 -------------------------------
+Ruta: /login
 Función: Login
 Datos de entrada: emai, password
-Ruta: /login
 Metodo: POST
 Descripción: Recibe un email/password por request, para retornar una sesión de login en caso de que el usuario exista.
 ------------------------
+Ruta: /autenticacion
 Función: Autenticación
 Datos de entrada (obligatorios): hash
 Datos de entrada (Opcionales): (true/null)
-Ruta: /autenticacion
 Metodo: POST
 Descripción: Recibe un hash y valida si el usuario aun está autenticado. Si sólo se envía el hash (por Request), retorna los datos del usuario en sesión. Si se envía un segundo parámetro como True, retorna un booleano con el estado del usuario, es decir, si se encuentra o no autenticad (True o False).
 
@@ -50,11 +50,25 @@ Descripción: Recibe un hash y valida si el usuario aun está autenticado. Si s�
 
 Paths: /user
 -------------------------------
+Ruta: /user/
+Función: Traer todos los usuarios existentes
+Datos de entrada (obligatorios): -
+Datos de entrada (Opcionales): -
+Metodo: GET
+Descripción: Devuelve todos los usuarios existentes en la DB.
+-------------------------------
+Ruta: /user/new
 Función: Registro de usuario
 Datos de entrada (obligatorios): username, password, nombre, apellido, email
 Datos de entrada (Opcionales): role
-Ruta: /user/new
 Metodo: POST
 Descripción: Recibe datos de un usuario por request, para retornar si el usuario ha sido registrado. 
 Por defecto, todos los usuarios se crean con estado Activo = True. 
-Todos los usuarios serán creados con el Rol = USER, en caso de no ser especificado.
+Todos los usuarios serán creados con el Rol = 1, en caso de no ser especificado.
+-------------------------------
+Ruta: /user/edit
+Función: Edicion de usuario
+Datos de entrada (obligatorios): token del usuario logueado.
+Datos de entrada (Opcionales): -
+Metodo: POST
+Descripción: Recibe token y datos de un usuario por request, para retornar si el usuario ha sido editado. 
