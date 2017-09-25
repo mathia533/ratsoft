@@ -1,0 +1,4 @@
+default_index:
+    path: /
+    defaults: { _controller: "FrontendBundle:Default:index" }
+    methods: GET

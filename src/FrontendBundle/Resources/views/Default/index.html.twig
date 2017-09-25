@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<!-- Ejemplo de metodo POST - Tratando de registrar un usuario -->
+<span for="">Apretá el botón para intentar registrar un usuario..</span><br>
+<span>Ojo! No le estoy pasando ningun parámetro, está bien que falle!</span><br><br>
+
+<input type="button" name="Registrar usuario" data-ng-click="userNew()" value="Registrar">
+<br>
+Respuesta: <span data-ng-if="rtaUser">{{ '{{rtaUser.msg}}' }}</span>
+
+<br>
+<hr><hr>
+<br>
+
+<!-- Ejemplo de metodo GET - Recuperando todas las empresas de la DB -->
+<table>
+	<tr ng-repeat="emp in empresas" align="center">
+		<td>{{ '{{emp.id}}' }}</td>
+		<td>{{ '{{emp.nombre}}' }}</td>
+		<td>{{ '{{emp.domicilio}}' }}</td>
+		<td>{{ '{{emp.localidad}}' }}</td>
+		<td>{{ '{{emp.provincia.nombre}}' }}</td>
+		<td>{{ '{{emp.iibb}}' }}</td>
+	</tr>
+</table>
+
+
+{% endblock %}
