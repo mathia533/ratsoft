@@ -1,0 +1,3 @@
+frontend_default:
+  resource: "@FrontendBundle/Resources/config/routing/default.yml"
+  prefix: /

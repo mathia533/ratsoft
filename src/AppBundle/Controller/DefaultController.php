@@ -11,13 +11,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class DefaultController extends Controller
 {
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
-    }
 
     public function loginAction(Request $request) {
         // Cargo el Servicio jwt_auth para validar el login.
@@ -49,38 +42,38 @@ class DefaultController extends Controller
                 /* Llamo al servicio de autenticación y le envío el user y password del Request, 
                     para saber si el usuario existen en la DB..
                     Genero el token y lo recibo en $signup */
-                if ($getHash == null) {
-                    $signup = $jwt_auth->signup($email, $password);
-                } else {
-                    $signup = $jwt_auth->signup($email, $password, true);
-                }
-               
+                    if ($getHash == null) {
+                        $signup = $jwt_auth->signup($email, $password);
+                    } else {
+                        $signup = $jwt_auth->signup($email, $password, true);
+                    }
+
                 // Convierto en formato Json la respuesta del servicio, y la envío al Front.
-                $jsonContent = $serializer->serialize($signup, 'json');
-                return new Response($jsonContent);
+                    $jsonContent = $serializer->serialize($signup, 'json');
+                    return new Response($jsonContent);
+                } else {
+                    return array(
+                        'status' => 'ERROR',
+                        'data' => 'Los datos ingresados son incorrectos.'
+                        );
+                }
             } else {
                 return array(
                     'status' => 'ERROR',
-                    'data' => 'Los datos ingresados son incorrectos.'
-                );
+                    'data' => 'No se han enviado datos por POST.'
+                    );
             }
-        } else {
-            return array(
-                'status' => 'ERROR',
-                'data' => 'No se han enviado datos por POST.'
-            );
         }
-    }
 
 
-    public function autenticacionAction(Request $request)
-    {
+        public function autenticacionAction(Request $request)
+        {
         // Cargo los servicios que voy a utilizar.
-        $helpers = $this->get('app.helpers');
-        $serializer = SerializerBuilder::create()->build();
+            $helpers = $this->get('app.helpers');
+            $serializer = SerializerBuilder::create()->build();
 
         // Recibo el parametro 'authorization' del Request.
-        $hash = $request->get('authorization', null);
+            $hash = $request->get('authorization', null);
 
         /* Le pasamos el hash que tenemos del usuario, y si le pasamos true al metodo authCheck, 
             nos devuelve todos los datos del usuario logueado.
@@ -88,9 +81,9 @@ class DefaultController extends Controller
 
             Envío true: Devuelve los datos decodificados.
             Envío sólo hash: Devuelve boolean. */
-        $check = $helpers->authCheck($hash);
+            $check = $helpers->authCheck($hash);
 
-        $jsonContent = $serializer->serialize($check, 'json');
-        return new Response($jsonContent);
+            $jsonContent = $serializer->serialize($check, 'json');
+            return new Response($jsonContent);
+        }
     }
-}

@@ -20,7 +20,7 @@ BackendBundle\Entity\TblUser:
         password:
             type: string
             nullable: true
-            length: 45
+            length: 100
             options:
                 fixed: false
         nombre:

@@ -8,7 +8,7 @@ user_edit:
     defaults: { _controller: "AppBundle:User:edit" }
     methods: POST
 
-user_list:
-    path: /list
-    defaults: { _controller: "AppBundle:User:list" }
-    methods: POST
+user_all:
+    path: /
+    defaults: { _controller: "AppBundle:User:all" }
+    methods: GET
