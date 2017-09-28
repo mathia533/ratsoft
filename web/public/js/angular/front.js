@@ -4,12 +4,20 @@ app.controller("frontendController", function($scope, $http){
 
 	$scope.productos = [];
 
-  var firstObj = new Object();
 
   // Este método es ejecutado desde el Frontend
   $scope.userNew = function() {
-    firstObj.nombre = $scope.nombre;
-    $scope.rqt = firstObj;
+    var json = new Object();
+    json.nombre = $scope.nombre;
+    json.apellido = $scope.apellido;
+    json.username = $scope.username;
+    json.password = $scope.password;
+    json.email = $scope.email;
+
+    var user = new Object();
+    user.json = json;
+
+    $scope.rqt = user;
 
     $http({ 
       method: 'POST',

@@ -9,7 +9,3 @@ app_user:
 app_empresas:
   resource: "@AppBundle/Resources/config/routing/empresas.yml"
   prefix: /empresa
-
-app_contable:
-  resource: "@AppBundle/Resources/config/routing/contable.yml"
-  prefix: /contable

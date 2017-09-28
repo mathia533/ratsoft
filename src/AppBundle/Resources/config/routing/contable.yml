@@ -1,4 +1,0 @@
-contable_home:
-    path: /home
-    defaults: { _controller: "AppBundle:Contable:index" }
-    methods: GET

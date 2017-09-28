@@ -37,6 +37,8 @@ class UserController extends Controller
         $helpers = $this->get('app.helpers');
         $serializer = SerializerBuilder::create()->build();
 
+        var_dump($request);
+        die();
         $json = $request->get('json', null);
         $params = json_decode($json);
 

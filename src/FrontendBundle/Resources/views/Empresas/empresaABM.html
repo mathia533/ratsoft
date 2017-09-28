@@ -35,7 +35,12 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                  <tr ng-repeat="emp in empresas">
+                    <td>{{ '{{emp.nombre}}' }}</td>
+                    <td>{{ '{{emp.cuit}}' }}</td>
+                    <td>{{ '{{emp.iva.detalle}}' }}</td>
+                    <td>{{ '{{emp.provincia.nombre}}' }}</td>
+                  </tr> 
                 </tbody>
                 <tfoot>
                   <tr>

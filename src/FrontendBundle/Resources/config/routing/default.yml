@@ -2,3 +2,19 @@ default_index:
     path: /
     defaults: { _controller: "FrontendBundle:Default:index" }
     methods: GET
+
+default_login1:
+    path: /login-ratsoft
+    defaults: { _controller: "FrontendBundle:Default:login" }
+    methods: GET
+
+default_register:
+    path: /register
+    defaults: { _controller: "FrontendBundle:Default:register" }
+    methods: GET
+
+empresas_index:
+    path: /listado
+    defaults: { _controller: "FrontendBundle:Empresas:index" } 
+                              # bundle, dps controler y funcion que llama 
+    methods: GET
