@@ -41,7 +41,7 @@
         {% block header %}
             <header class="main-header">
                     <!-- Logo -->
-                <a href="/index.html" class="logo">
+                <a href="/home" class="logo">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>R</b>ST</span>
                         <!-- logo for regular state and mobile devices -->
@@ -100,7 +100,7 @@
                             <li class="active treeview">
                             </li>
                             <li>
-                                <a href="{{ asset('contable/home') }}">
+                                <a href="{{ asset('/listado') }}">
                                     <i class="fa fa-files-o"></i>
                                     <span>Contable</span>            
                                 </a>   
@@ -123,27 +123,13 @@
                 </aside>
         {% endblock %}
         {% block body %}
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                    <!-- Content Header (Page header) -->
+         
 
-                <section class="content-header">
-                  <h1>Dashboard <small>Control panel</small></h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>
-                    <!-- Main content -->
-                <section class="content">
-                  <!-- Small boxes (Stat box) -->
-                  <div class="row">
+            <!-- al extender se insertara la interfaz aqui -->
 
-                  </div>
-                  <!-- /.row (main row) -->
-                </section>
-                <!-- /.content -->
-            </div>
+
+
+
         {% endblock %}
             <!-- /.content-wrapper -->
         {% block footer %}
@@ -261,8 +247,14 @@
             <script src="{{ asset('public/js/angular/front.js') }}"></script>
             <script>
               $(function () {
-                $('#example1').DataTable()
-              })
+                $('#example1').DataTable({
+                        "order": [[ 0, "desc" ]],
+                        "lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]],
+                        "bPaginate": true,
+                        "lengthChange": true,
+                        "iDisplayLength": 15,
+                    });
+              });
             </script>
             <!-- Morris.js charts -->
             <script src="{{ asset('bower_components/raphael/raphael.min.js') }}"></script>

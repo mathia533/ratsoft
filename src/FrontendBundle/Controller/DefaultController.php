@@ -12,14 +12,21 @@ class DefaultController extends Controller
 		return $this->render('FrontendBundle:Default:index.html.twig');
 	}
 
+	public function homeAction()
+	{
+		return $this->render('FrontendBundle:Default:home.html.twig');
+	}
+
 	public function loginAction()
 	{
 		// return $this->render('FrontendBundle:Users:login.html.twig');
-		return $this->render('login/login.html.twig');
+		return $this->render('FrontendBundle:Users:login.html.twig');
 	}
 
 	public function registerAction()
 	{
 		return $this->render('FrontendBundle:Users:register.html.twig');
 	}
+
+
 }

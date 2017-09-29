@@ -13,6 +13,11 @@ default_register:
     defaults: { _controller: "FrontendBundle:Default:register" }
     methods: GET
 
+home_index:
+    path: /home
+    defaults: { _controller: "FrontendBundle:Default:home" }
+    methods: GET
+
 empresas_index:
     path: /listado
     defaults: { _controller: "FrontendBundle:Empresas:index" } 
