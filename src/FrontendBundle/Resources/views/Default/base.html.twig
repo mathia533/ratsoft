@@ -240,22 +240,10 @@
             </script>
             <!-- Bootstrap 3.3.7 -->
             <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-             <!-- DataTables -->
-            <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-            <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+            
             <script src="{{ asset('public/js/angular/angular.min.js') }}"></script>
             <script src="{{ asset('public/js/angular/front.js') }}"></script>
-            <script>
-              $(function () {
-                $('#example1').DataTable({
-                        "order": [[ 0, "desc" ]],
-                        "lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]],
-                        "bPaginate": true,
-                        "lengthChange": true,
-                        "iDisplayLength": 15,
-                    });
-              });
-            </script>
+            
             <!-- Morris.js charts -->
             <script src="{{ asset('bower_components/raphael/raphael.min.js') }}"></script>
             <script src="{{ asset('bower_components/morris.js/morris.min.js') }}"></script>
@@ -283,6 +271,8 @@
             <!-- <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script> -->
             <!-- AdminLTE for demo purposes -->
             <script src="{{ asset('dist/js/demo.js') }}"></script>
+        {% endblock %}
+        {% block Scripts %}
         {% endblock %}
 </body>
 </html>

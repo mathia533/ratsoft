@@ -9,6 +9,10 @@ class EmpresasController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('FrontendBundle:Empresas:empresaABM.html.twig');
+
+    	$em = $this->getDoctrine()->getManager();
+		$empresas = $em->getRepository("BackendBundle:TblEmpresas")->findAll();
+
+        return $this->render('FrontendBundle:Empresas:empresaABM.html.twig', array('empresas'=>$empresas));
     }
 }
