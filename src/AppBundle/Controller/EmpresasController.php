@@ -115,8 +115,10 @@ class EmpresasController extends Controller
     // );
 
 		$em = $this->getDoctrine()->getManager();
-		$empresas = $em->getRepository("BackendBundle:TblEmpresas")->findAll();
-
+		$result = $em->getRepository("BackendBundle:TblEmpresas")->findAll();
+		$empresas = array(
+			'data' => $result
+		);
 		$serializer = SerializerBuilder::create()->build();
 		$jsonResponse = $serializer->serialize($empresas, 'json');
 		return new Response($jsonResponse);		

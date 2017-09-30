@@ -1,4 +1,4 @@
-{% extends 'FrontendBundle::Default/base.html.twig' %}
+{% extends 'empresas/base.php.twig' %}
 {% block body %}
   <!-- ACA EMPIEZO A TRABAJAR LA INTERFAZ Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -9,10 +9,11 @@
         <small>Buscador</small>
       </h2>
       <ol class="breadcrumb">
-        <li><a href="/home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Buscador de Empresas</li>
       </ol>
     </section>
+
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
@@ -24,84 +25,31 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-              <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-              <script>
-                $(document).ready(function() {
-                  $('#example1').DataTable({
-                    "processing": true,
-                    "serverSide": true,
-                    "ajax": "/empresa",
-                    "columns": [
-                      { "data": "id"},
-                      { "data": "nombre"},
-                      { "data": "domicilio"},
-                      ]
-                        //"order": [[ 0, "desc" ]],
-                        //"lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]],
-                        //"bPaginate": true,
-                        //"lengthChange": true,
-                        //"iDisplayLength": 15,
-                        //"bStateSave": true,
-                        //"sPaginationType": "full_numbers",
-                        //"bProcessing": true,
-                        //"bServerSide": true
-                        /*"ajax":{
-                                "url": '/empresas',
-                                "type": 'GET',
-                                "data": function ( d ) {
-                                    d.myKey = "list_users";
-                                },
-                            },
-                            "columns": [
-                                {
-                                    "class":          'details-control',
-                                    "orderable":      false,
-                                    "data":           null,
-                                    "defaultContent": ''
-                                },
-                                { "data": "name", "title": "name"},
-                                { "data": "surname", "title": "surname"},
-                                { "data": "email", "title": "email"},
-                                { "data": "region", "title": "region"},
-                                { "data": "last_modification", "title": "last modification" }
-                            ]*/
-                        // "sAjaxSource": "<?php echo url_for('/empresas') ?>",
-                    });
-              });
-            </script>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Razon Social</th>
                     <th>Cuit</th>
                     <th>Condicion IVA</th>
-                    <!-- <th>Jurisdiccion</th> -->                    
+                    <th>Jurisdiccion</th>                    
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- <tr ng-repeat="emp in empresas">
-                    <td>{{ '{{emp.nombre}}' }}</td>
-                    <td>{{ '{{emp.cuit}}' }}</td>
-                    <td>{{ '{{emp.iva.detalle}}' }}</td>
-                    <td>{{ '{{emp.provincia.nombre}}' }}</td>
-                  </tr>  -->
-                  <!--{% for emp in empresas %}
-                  <tr >
-                    <td>{{emp.nombre}}</td>
-                    <td>{{emp.cuit}}</td>
-                    <td>{{emp.iva.detalle}}</td> 
-                    <td>{{emp.provincia.nombre}}</td> 
-                  </tr> 
-                  {% endfor %}
-                -->
+
+                  {% set a = controller('AppBundle:Empresas:list',{ 'Request': '' }) | json_encode() %}
+                  
+                  <!-- {% set empresas = render(controller('AppBundle:Empresas:list',{ 'Request': '' })) 
+                  %}
+                  {% for item in empresas %}
+                    <li>{{ item.nombre }}</li>
+                  {% endfor %} -->
                 </tbody>
                 <tfoot>
                   <tr>
                     <th>Razon Social</th>
                     <th>Cuit</th>
                     <th>Condicion IVA</th>
-                    <!-- <th>Jurisdiccion</th> -->
+                    <th>Jurisdiccion</th>
                   </tr>
                 </tfoot>
               </table>
@@ -145,7 +93,7 @@
                     <div class="form-group">
                       <label for="situacionIVACompleto">Situacion IVA: </label>                      
                       <div class="input-sm"> 
-                        <select name="situacionIVA" required="true" class="selectpicker dropdown-toggle" type="button" data-toggle="dropdown" disabled="true">
+                        <select name="situacionIVA" required="true" class="selectpicker dropdown-toggle" type="button" data-toggle="dropdown">
                           <option disabled selected value>--Seleccione una opcion--</option>  
                           <option>Opcion 1</option>
                           <option>Opcion 2</option>
@@ -207,10 +155,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-{% endblock %}
-{% block Scripts %}
- <!-- DataTables -->
-<script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
-
 {% endblock %}
