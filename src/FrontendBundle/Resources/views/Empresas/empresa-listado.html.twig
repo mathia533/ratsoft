@@ -104,6 +104,7 @@
           </div>
         </div>
         <div class="col-xs-6">
+
           <div class="panel-group" id="accordion">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -113,7 +114,10 @@
                   </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse in">
+                  
                   <div class="box-body">
+                    {% block botones %}
+                    {% endblock %}
                     <div class="form-group">
                       <label for="empresaID">ID: </label>
                       <input type="number" required="true" class="form-control input-sm" id="empresaID" name="empresaID" disabled="true" placeholder="ID Empresa" />
