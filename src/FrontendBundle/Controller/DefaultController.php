@@ -9,7 +9,7 @@ class DefaultController extends Controller
 {
 	public function indexAction()
 	{
-		return $this->render('FrontendBundle:Default:index.html.twig');
+		return $this->render('FrontendBundle:Default:home.html.twig');
 	}
 
 	public function homeAction()

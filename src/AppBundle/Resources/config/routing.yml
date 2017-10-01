@@ -1,11 +1,3 @@
-app_default:
-  resource: "@AppBundle/Resources/config/routing/default.yml"
-  prefix: /
-
-app_user:
-  resource: "@AppBundle/Resources/config/routing/user.yml"
-  prefix: /user
-
-app_empresas:
-  resource: "@AppBundle/Resources/config/routing/empresas.yml"
-  prefix: /empresa
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }

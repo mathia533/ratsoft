@@ -1,0 +1,14 @@
+user_new:
+    path: /new
+    defaults: { _controller: "BackendBundle:User:new" }
+    methods: POST
+
+user_edit:
+    path: /edit
+    defaults: { _controller: "BackendBundle:User:edit" }
+    methods: POST
+
+user_all:
+    path: /
+    defaults: { _controller: "BackendBundle:User:all" }
+    methods: GET

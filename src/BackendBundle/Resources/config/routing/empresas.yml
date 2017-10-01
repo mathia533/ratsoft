@@ -1,0 +1,14 @@
+empresa_all:
+    path: /
+    defaults: { _controller: BackendBundle:Empresas:all }
+    methods: GET
+
+empresa_new:
+    path: /new
+    defaults: { _controller: "BackendBundle:Empresas:new" }
+    methods: POST
+
+empresa_find:
+    path: /find
+    defaults: { _controller: "BackendBundle:Empresas:findByCuit" }
+    methods: POST

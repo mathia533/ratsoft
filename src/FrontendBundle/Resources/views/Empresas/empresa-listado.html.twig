@@ -1,4 +1,9 @@
 {% extends 'FrontendBundle::Default/base.html.twig' %}
+{% block Scripts %}
+ <!-- DataTables -->
+<script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+{% endblock %}
 {% block body %}
   <!-- ACA EMPIEZO A TRABAJAR LA INTERFAZ Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -24,8 +29,6 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-              <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
               <script>
                 $(document).ready(function() {
                   // armamos el Datatable para traernos la info desde /empresa
@@ -200,10 +203,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-{% endblock %}
-{% block Scripts %}
- <!-- DataTables -->
-<script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
-
 {% endblock %}
