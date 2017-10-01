@@ -28,32 +28,65 @@
               <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
               <script>
                 $(document).ready(function() {
-                  $('#example1').DataTable({
+                  var table = $('#tabla-empresas').DataTable({
                     "processing": true,
+                    //"select": "single",
                     "ajax": "/empresa",
                     "columns": [
-                      { "data": "id"},
                       { "data": "nombre"},
-                      { "data": "domicilio"},
+                      { "data": "cuit",
+                        "className": "cuit"},
+                      { "data": "iva.detalle"},
+                      { "data": "provincia.nombre" },
                       ]
                   });
+                  $('#tabla-empresas tbody').on( 'click', 'tr', function () {
+                    if ( $(this).hasClass('active') ) {
+                      $(this).removeClass('active');
+                    }
+                    else {
+                      table.$('tr.active').removeClass('active');
+                      $(this).addClass('active');
+                      var cuit = table.$("tr.active").find(".cuit").text();
+                      console.log( cuit );
+                      $.post("/empresa/find",{"cuit":cuit},function(resp,estado,jqXHR){
+                        //console.log(resp);
+                        var arrayResp = JSON.parse(resp);
+                        $('div.form-group #empresaID').attr("placeholder",arrayResp.data.id);
+                        $('div.form-group #nombre').attr("placeholder",arrayResp.data.nombre);
+                        $('div.form-group #domicilio').attr("placeholder",arrayResp.data.domicilio);
+                        $('div.form-group #localidad').attr("placeholder",arrayResp.data.localidad);
+                        $('div.form-group #provincia').attr("placeholder",arrayResp.data.provincia.nombre);
+                        $('div.form-group #iva').attr("placeholder",arrayResp.data.iva.detalle);
+                        $('div.form-group #cuit').attr("placeholder",arrayResp.data.cuit);
+                        $('div.form-group #ingresosBrutos').attr("placeholder",arrayResp.data.iibb);
+                        $('div.form-group #rubro').attr("placeholder",arrayResp.data.rubro.nombre);
+                        $('div.form-group #titular').attr("placeholder",arrayResp.data.titular);
+                        //console.log(arrayResp.data.cuit);
+
+                      });
+                    }
+
+                  });
+                  
                 });
             </script>
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="tabla-empresas" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Razon Social</th>
                     <th>Cuit</th>
                     <th>Condicion IVA</th>
-                    <!-- <th>Jurisdiccion</th> -->                    
+                    <th>Jurisdiccion</th>                    
                   </tr>
                 </thead>
+                <tbody></tbody>
                 <tfoot>
                   <tr>
                     <th>Razon Social</th>
                     <th>Cuit</th>
                     <th>Condicion IVA</th>
-                    <!-- <th>Jurisdiccion</th> -->
+                    <th>Jurisdiccion</th>
                   </tr>
                 </tfoot>
               </table>
@@ -95,7 +128,8 @@
                       <input type="text" class="form-control input-sm" id="provincia" name="provincia" placeholder="provincia empresa" disabled="true"/>                      
                     </div>
                     <div class="form-group">
-                      <label for="situacionIVACompleto">Situacion IVA: </label>                      
+                      <label for="situacionIVACompleto">Situacion IVA: </label>
+                      <!--                      
                       <div class="input-sm"> 
                         <select name="situacionIVA" required="true" class="selectpicker dropdown-toggle" type="button" data-toggle="dropdown" disabled="true">
                           <option disabled selected value>--Seleccione una opcion--</option>  
@@ -104,8 +138,9 @@
                           <option>Opcion 3</option>
                         </select>
                       </div>
-                      <br>                
-                      <input type="text" class="form-control input-sm" name="situacionIVACompleto" disabled="true" placeholder="Situacion IVA descripcion completa" /> 
+                      <br>
+                      -->                
+                      <input type="text" class="form-control input-sm" id="iva" name="situacionIVACompleto" disabled="true" placeholder="Situacion IVA descripcion completa" /> 
                     </div>
                     <div class="form-group">
                       <label for="cuit">Cuit: </label>                    

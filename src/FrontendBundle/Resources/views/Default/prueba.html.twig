@@ -8,27 +8,13 @@
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-        $('#example1').DataTable({
-            "processing": true,
-            //"serverSide": true,
-            //"searching" : true,
-            "ajax": "/empresa",
-            "columns": [
-              { "data": "id"},
-              { "data": "nombre",
-          		"searchable" : true	},
-              { "data": "domicilio"},
-              //{ "data": "localidad"},
-              //{ "data": "cuit"},
-              //{ "data": "iibb"},
-              //{ "data": "titular"},
-              //{ "data": "activo"},
-              //{ "data": "iva"},
-              //{ "data": "provincia"},
-              //{ "data": "rubro"},
-            ]
-                       
-            });
+          
+          var cuit = "20123456773";
+          var url = '../empresa/find';
+
+          $.post(url,{"cuit":cuit},function(resp,estado,jqXHR){
+            console.log(resp);
+          })
         });
     </script>
     <table id="example1" class="display" cellspacing="0" width="100%">

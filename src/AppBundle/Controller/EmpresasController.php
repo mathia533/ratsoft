@@ -11,6 +11,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 use BackendBundle\Entity\TblEmpresas;
 use BackendBundle\Entity\TblSituacionIva;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
 class EmpresasController extends Controller
 {
 
@@ -92,29 +95,7 @@ class EmpresasController extends Controller
 
 
 	public function allAction(Request $request){
-    // // Cargo los servicios que voy a utilizar.
-    // $helpers = $this->get('app.helpers');
-    // $serializer = SerializerBuilder::create()->build();
-
-    // // Recupero el hash recibido
-    // $json = $request->get('authorization', null);
-
-    // // Pregunto al servicio si el hash es auténtico.
-    // $authCheck = $helpers->authCheck($hash);
-
-    // $em = $this->getDoctrine()->getManager();
-    // $query = $em->createQuery('select u from TblRubros u');
-    // $rubros = $query->getResult();
-    // $jsonResponse = $serializer->serialize($rubros, 'json');
-    // return new Response($jsonResponse);
-
-    // // $rubros = $query->getResult();
-    // $data = array(
-    //     'status' => 'ERROR',
-    //     'msg' => 'El usuario no pudo ser creado.'
-    // );
-
-		$em = $this->getDoctrine()->getManager();
+    	$em = $this->getDoctrine()->getManager();
 		$result = $em->getRepository("BackendBundle:TblEmpresas")->findAll();
 		$empresas = array(
 			'draw' => '',
@@ -127,6 +108,36 @@ class EmpresasController extends Controller
 		return new Response($jsonResponse);		
 	}
 
-	// 
+	/**
+	*	@Route("/empresa/find",name="empresa_find")
+	*	@Method({"POST"})
+	*/
+
+	public function findByCuitAction(Request $request){
+
+				
+		
+		$cuit = $request->request->get("cuit");
+    	
+    	$em = $this->getDoctrine()->getManager();
+		$result = $em->getRepository("BackendBundle:TblEmpresas")->findOneBy(array('cuit' => $cuit));
+		$empresas = array(
+			'draw' => '',
+			'recordsTotal' => '',
+			'recordsFiltered' => '',
+			'data' => $result,
+		);
+		
+		$serializer = SerializerBuilder::create()->build();
+		$jsonResponse = $serializer->serialize($empresas, 'json');
+		return new Response(
+			$jsonResponse
+		);
+		
+
+		//return new Response(
+		//	$request->request->get("cuit")
+		//);
+	} 
 
 }
