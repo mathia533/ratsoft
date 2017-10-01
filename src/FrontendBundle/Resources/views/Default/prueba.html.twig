@@ -10,11 +10,13 @@
         $(document).ready(function() {
         $('#example1').DataTable({
             "processing": true,
-            "serverSide": true,
+            //"serverSide": true,
+            //"searching" : true,
             "ajax": "/empresa",
             "columns": [
               { "data": "id"},
-              { "data": "nombre"},
+              { "data": "nombre",
+          		"searchable" : true	},
               { "data": "domicilio"},
               //{ "data": "localidad"},
               //{ "data": "cuit"},
@@ -29,7 +31,7 @@
             });
         });
     </script>
-    <table id="example1">
+    <table id="example1" class="display" cellspacing="0" width="100%">
     	<thead>
             <tr>
                 <th>id</th>

@@ -30,45 +30,14 @@
                 $(document).ready(function() {
                   $('#example1').DataTable({
                     "processing": true,
-                    "serverSide": true,
                     "ajax": "/empresa",
                     "columns": [
                       { "data": "id"},
                       { "data": "nombre"},
                       { "data": "domicilio"},
                       ]
-                        //"order": [[ 0, "desc" ]],
-                        //"lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]],
-                        //"bPaginate": true,
-                        //"lengthChange": true,
-                        //"iDisplayLength": 15,
-                        //"bStateSave": true,
-                        //"sPaginationType": "full_numbers",
-                        //"bProcessing": true,
-                        //"bServerSide": true
-                        /*"ajax":{
-                                "url": '/empresas',
-                                "type": 'GET',
-                                "data": function ( d ) {
-                                    d.myKey = "list_users";
-                                },
-                            },
-                            "columns": [
-                                {
-                                    "class":          'details-control',
-                                    "orderable":      false,
-                                    "data":           null,
-                                    "defaultContent": ''
-                                },
-                                { "data": "name", "title": "name"},
-                                { "data": "surname", "title": "surname"},
-                                { "data": "email", "title": "email"},
-                                { "data": "region", "title": "region"},
-                                { "data": "last_modification", "title": "last modification" }
-                            ]*/
-                        // "sAjaxSource": "<?php echo url_for('/empresas') ?>",
-                    });
-              });
+                  });
+                });
             </script>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -79,23 +48,6 @@
                     <!-- <th>Jurisdiccion</th> -->                    
                   </tr>
                 </thead>
-                <tbody>
-                  <!-- <tr ng-repeat="emp in empresas">
-                    <td>{{ '{{emp.nombre}}' }}</td>
-                    <td>{{ '{{emp.cuit}}' }}</td>
-                    <td>{{ '{{emp.iva.detalle}}' }}</td>
-                    <td>{{ '{{emp.provincia.nombre}}' }}</td>
-                  </tr>  -->
-                  <!--{% for emp in empresas %}
-                  <tr >
-                    <td>{{emp.nombre}}</td>
-                    <td>{{emp.cuit}}</td>
-                    <td>{{emp.iva.detalle}}</td> 
-                    <td>{{emp.provincia.nombre}}</td> 
-                  </tr> 
-                  {% endfor %}
-                -->
-                </tbody>
                 <tfoot>
                   <tr>
                     <th>Razon Social</th>
