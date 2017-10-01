@@ -116,28 +116,30 @@ class EmpresasController extends Controller
 	public function findByCuitAction(Request $request){
 
 				
-		
+		// guardamos la variable POST que viene en el request
 		$cuit = $request->request->get("cuit");
     	
+    	// obtenemos el JSON con el resultado de la búsqueda por cuit
     	$em = $this->getDoctrine()->getManager();
 		$result = $em->getRepository("BackendBundle:TblEmpresas")->findOneBy(array('cuit' => $cuit));
+
+		// armamos el JSON para mantener el formato que requiere un Datatable
 		$empresas = array(
 			'draw' => '',
 			'recordsTotal' => '',
 			'recordsFiltered' => '',
 			'data' => $result,
 		);
+
+		// usamos el serializer para armar un string que contenga el JSON recursivo, es decir que se vean todos los niveles de profundidad del arbol. Si no hacemos esto solo mandariamos el nivel 0.
 		
 		$serializer = SerializerBuilder::create()->build();
 		$jsonResponse = $serializer->serialize($empresas, 'json');
+		
+		//Mandamos la respuesta.
+
 		return new Response(
 			$jsonResponse
 		);
-		
-
-		//return new Response(
-		//	$request->request->get("cuit")
-		//);
 	} 
-
 }

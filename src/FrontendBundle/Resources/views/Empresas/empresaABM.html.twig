@@ -28,18 +28,20 @@
               <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
               <script>
                 $(document).ready(function() {
+                  // armamos el Datatable para traernos la info desde /empresa
                   var table = $('#tabla-empresas').DataTable({
                     "processing": true,
-                    //"select": "single",
                     "ajax": "/empresa",
                     "columns": [
                       { "data": "nombre"},
                       { "data": "cuit",
-                        "className": "cuit"},
+                        "className": "cuit"}, //esto es importante, le ponemos una clase a este campo
                       { "data": "iva.detalle"},
                       { "data": "provincia.nombre" },
                       ]
                   });
+
+                  // A partir de acá metemos lo que pasa cuando picamos sobre alguna empresa
                   $('#tabla-empresas tbody').on( 'click', 'tr', function () {
                     if ( $(this).hasClass('active') ) {
                       $(this).removeClass('active');
@@ -47,11 +49,15 @@
                     else {
                       table.$('tr.active').removeClass('active');
                       $(this).addClass('active');
+                      // metemos en una variable lo que hay en e campo cuit de la empresa seleccionada
                       var cuit = table.$("tr.active").find(".cuit").text();
-                      console.log( cuit );
+                      //console.log( cuit );
+                      // Mandamos esta variable por post a /empresa/find para traernos toda la info de la empresa y poder volcarla en el panel de la derecha
                       $.post("/empresa/find",{"cuit":cuit},function(resp,estado,jqXHR){
                         //console.log(resp);
+                        // Parseamos la respuesta para que no sea un string y podamos navegarlo
                         var arrayResp = JSON.parse(resp);
+                        // Aplicamos lo que trajimos para cambiar el placeholder en todos los campos donde sea necesario
                         $('div.form-group #empresaID').attr("placeholder",arrayResp.data.id);
                         $('div.form-group #nombre').attr("placeholder",arrayResp.data.nombre);
                         $('div.form-group #domicilio').attr("placeholder",arrayResp.data.domicilio);
