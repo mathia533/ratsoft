@@ -1,4 +1,5 @@
 {% extends 'FrontendBundle::Default/base.html.twig' %}
+
 {% block Scripts %}
  <!-- DataTables -->
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
@@ -21,6 +22,14 @@
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
+      <div class="col-xs-6">        
+      </div>
+      <div class="col-xs-6">
+        <div class="form-group">
+                      {% block botones %}
+                      {% endblock %}
+          </div>
+      </div>
       <div class="row">
         <div class="col-xs-6">
           <div class="box">
@@ -46,14 +55,14 @@
 
                   // A partir de acá metemos lo que pasa cuando picamos sobre alguna empresa
                   $('#tabla-empresas tbody').on( 'click', 'tr', function () {
-                    if ( $(this).hasClass('active') ) {
-                      $(this).removeClass('active');
+                    if ( $(this).hasClass('selected') ) {
+                      $(this).removeClass('selected');
                     }
                     else {
-                      table.$('tr.active').removeClass('active');
-                      $(this).addClass('active');
+                      table.$('tr.selected').removeClass('selected');
+                      $(this).addClass('selected');
                       // metemos en una variable lo que hay en e campo cuit de la empresa seleccionada
-                      var cuit = table.$("tr.active").find(".cuit").text();
+                      var cuit = table.$("tr.selected").find(".cuit").text();
                       //console.log( cuit );
                       // Mandamos esta variable por post a /empresa/find para traernos toda la info de la empresa y poder volcarla en el panel de la derecha
                       $.post("/empresa/find",{"cuit":cuit},function(resp,estado,jqXHR){
@@ -61,17 +70,19 @@
                         // Parseamos la respuesta para que no sea un string y podamos navegarlo
                         var arrayResp = JSON.parse(resp);
                         // Aplicamos lo que trajimos para cambiar el placeholder en todos los campos donde sea necesario
-                        $('div.form-group #empresaID').attr("placeholder",arrayResp.data.id);
-                        $('div.form-group #nombre').attr("placeholder",arrayResp.data.nombre);
-                        $('div.form-group #domicilio').attr("placeholder",arrayResp.data.domicilio);
-                        $('div.form-group #localidad').attr("placeholder",arrayResp.data.localidad);
-                        $('div.form-group #provincia').attr("placeholder",arrayResp.data.provincia.nombre);
-                        $('div.form-group #iva').attr("placeholder",arrayResp.data.iva.detalle);
-                        $('div.form-group #cuit').attr("placeholder",arrayResp.data.cuit);
-                        $('div.form-group #ingresosBrutos').attr("placeholder",arrayResp.data.iibb);
-                        $('div.form-group #rubro').attr("placeholder",arrayResp.data.rubro.nombre);
-                        $('div.form-group #titular').attr("placeholder",arrayResp.data.titular);
+                        $('div.form-group #empresaID').val(arrayResp.data.id);
+                        //$('div.form-group #nombre').attr("placeholder",arrayResp.data.nombre);
+                        $('div.form-group #nombre').val(arrayResp.data.nombre);
+                        $('div.form-group #domicilio').val(arrayResp.data.domicilio);
+                        $('div.form-group #localidad').val(arrayResp.data.localidad);
+                        $('div.form-group #provincia').val(arrayResp.data.provincia.nombre);
+                        $('div.form-group #iva').val(arrayResp.data.iva.detalle);
+                        $('div.form-group #cuit').val(arrayResp.data.cuit);
+                        $('div.form-group #ingresosBrutos').val(arrayResp.data.iibb);
+                        $('div.form-group #rubro').val(arrayResp.data.rubro.nombre);
+                        $('div.form-group #titular').val(arrayResp.data.titular);
                         //console.log(arrayResp.data.cuit);
+
 
                       });
                     }
@@ -80,8 +91,8 @@
                   
                 });
             </script>
-              <table id="tabla-empresas" class="table table-bordered table-striped">
-                <thead>
+              <table id="tabla-empresas" class="table table-bordered table-striped table-hover">
+                <thead>                  
                   <tr>
                     <th>Razon Social</th>
                     <th>Cuit</th>
@@ -103,8 +114,7 @@
             <!-- /.box-body -->
           </div>
         </div>
-        <div class="col-xs-6">
-
+        <div class="col-xs-6">          
           <div class="panel-group" id="accordion">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -116,8 +126,7 @@
                 <div id="collapse1" class="panel-collapse collapse in">
                   
                   <div class="box-body">
-                    {% block botones %}
-                    {% endblock %}
+                    
                     <div class="form-group">
                       <label for="empresaID">ID: </label>
                       <input type="number" required="true" class="form-control input-sm" id="empresaID" name="empresaID" disabled="true" placeholder="ID Empresa" />
