@@ -70,21 +70,21 @@ class EmpresasController extends Controller
 			)
 		);
 
-
+		// Genero el objeto SituacionIva y lo cargo en base al ID recibido
 		$situacionIva = new TblSituacionIva();
 		$situacionIva = $em->getRepository("BackendBundle:TblSituacionIva")->findOneBy(
 			array(
 				'id' => $respuesta["iva"]
 			)
 		);
-
+		// Genero el objeto Provincia y lo cargo en base al ID recibido
 		$provincia = new TblProvincias();
 		$provincia = $em->getRepository("BackendBundle:TblProvincias")->findOneBy(
 			array(
 				'id' => $respuesta["provincia"]
 			)
 		);
-
+		// Genero el objeto Rubro y lo cargo en base al ID recibido
 		$rubro = new TblRubros();
 		$rubro = $em->getRepository("BackendBundle:TblRubros")->findOneBy(
 			array(

@@ -1,0 +1,4 @@
+rubros_all:
+    path: /
+    defaults: { _controller: BackendBundle:Rubros:all }
+    methods: GET

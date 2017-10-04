@@ -1,0 +1,4 @@
+provincias_all:
+    path: /
+    defaults: { _controller: BackendBundle:Provincias:all }
+    methods: GET
