@@ -1,0 +1,4 @@
+compras_all:
+    path: /{id}
+    defaults: { _controller: BackendBundle:Compras:all }
+    methods: GET
