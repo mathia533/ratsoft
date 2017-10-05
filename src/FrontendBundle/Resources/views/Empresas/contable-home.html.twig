@@ -1,12 +1,16 @@
 {% extends 'FrontendBundle::Empresas/empresa-listado.html.twig' %}
 {% block botones %}
 	<div class="text-center">
-		<div class="col-xs-6">
-			<button class="btn btn-default btn-block">Compras</button>
+		<div class="col-xs-4">
+			<a href="/compras"><button class="btn btn-default btn-block">Compras</button></a>
 		</div>
-		<div class="col-xs-6">
-			<button class="btn btn-default btn-block">Ventas</button>
+		<div class="col-xs-4">
+			<a href="/ventas"><button class="btn btn-default btn-block">Ventas</button></a>
 		</div>
-	</div>
-	<br>
+		<div class="col-xs-4">
+			<button class="btn btn-primary btn-block">
+				<i class="fa fa-pencil" aria-hidden="true"> Editar Datos</i>
+			</button>
+		</div>
+	</div>	
 {% endblock %}

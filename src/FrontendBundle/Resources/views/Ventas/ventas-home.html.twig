@@ -1,0 +1,28 @@
+{% extends 'FrontendBundle::Ventas/ventas-listado.html.twig' %}
+{% block botones %}
+	<div class="text-center">
+		<div class="col-xs-2">
+			<button class="btn btn-default btn-block"> Volver</button>
+		</div>
+		<div class="col-xs-2">
+			<button class="btn btn-default btn-block"><i class="fa fa-plus-circle" aria-hidden="true"> Agregar</i></button>
+		</div>
+		</div>
+		<div class="col-xs-2">
+			<button class="btn btn-primary btn-block">
+				<i class="fa fa-pencil" aria-hidden="true"> Editar</i>
+			</button>
+		</div>
+		<div class="col-xs-2">
+			<button class="btn btn-primary btn-block">
+				<i class="fa fa-pencil" aria-hidden="true"> Eliminar</i>
+			</button>
+		</div>
+		<div class="col-xs-2">
+			<button class="btn btn-default btn-block"> Exportar</button>
+		</div>
+		<div class="col-xs-2">
+			<button class="btn btn-default btn-block"> Imprimir</button>
+		</div>		
+	</div>
+{% endblock %}

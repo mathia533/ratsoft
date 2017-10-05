@@ -29,3 +29,9 @@ impositivo_index:
     defaults: { _controller: "FrontendBundle:Modulos:impositivo" } 
                               # bundle, dps controler y funcion que llama 
     methods: GET
+
+ventas_index:
+    path: /ventas
+    defaults: { _controller: "FrontendBundle:Ventas:index" } 
+                              # bundle, dps controler y funcion que llama 
+    methods: GET

@@ -10,7 +10,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h2>
+       <h2>
         Empresas
         <small>Buscador</small>
       </h2>
@@ -20,16 +20,22 @@
       </ol>
     </section>
     <!-- Main content -->
+         
     <section class="content">
       <!-- Small boxes (Stat box) -->
-      <div class="col-xs-6">        
-      </div>
-      <div class="col-xs-6">
-        <div class="form-group">
-                      {% block botones %}
-                      {% endblock %}
+      <div class="row" style="padding-bottom: 0.5em;">        
+          <div class="col-xs-6">
+            <button class="btn btn-danger btn-block">
+              <i class="fa fa-plus-circle" aria-hidden="true"> Agregar Empresa </i> 
+            </button>
           </div>
-      </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+                          {% block botones %}
+                          {% endblock %}                                       
+            </div>
+          </div>
+      </div>         
       <div class="row">
         <div class="col-xs-6">
           <div class="box">
@@ -38,10 +44,26 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+              <style>
+                table { width: 50% }
+                tbody tr:hover.active td,
+                tbody tr:hover td {
+                  background-color: #A9D0F5;
+                  cursor: pointer;
+                }               
+                .table>tbody>tr.active>td {
+                  background-color: #A9D0F5;
+                  color: #000000;
+                  font:  bold 12px/18px Georgia, serif;
+                }
+              </style>
               <script>
                 $(document).ready(function() {
                   // armamos el Datatable para traernos la info desde /empresa
                   var table = $('#tabla-empresas').DataTable({
+                    // "lengthchange": false,
+                    // "dom": 'bfrtip',
+                    // "buttons": ['copy', 'csv', 'excel', 'print', 'pdf'],
                     "processing": true,
                     "ajax": "/empresa",
                     "columns": [
@@ -55,21 +77,21 @@
 
                   // A partir de acá metemos lo que pasa cuando picamos sobre alguna empresa
                   $('#tabla-empresas tbody').on( 'click', 'tr', function () {
-                    if ( $(this).hasClass('selected') ) {
-                      $(this).removeClass('selected');
+                    if ( $(this).hasClass('active') ) {
+                      $(this).removeClass('active');
                     }
                     else {
-                      table.$('tr.selected').removeClass('selected');
-                      $(this).addClass('selected');
+                      table.$('tr.active').removeClass('active');
+                      $(this).addClass('active');
                       // metemos en una variable lo que hay en e campo cuit de la empresa seleccionada
-                      var cuit = table.$("tr.selected").find(".cuit").text();
+                      var cuit = table.$("tr.active").find(".cuit").text();
                       //console.log( cuit );
                       // Mandamos esta variable por post a /empresa/find para traernos toda la info de la empresa y poder volcarla en el panel de la derecha
                       $.post("/empresa/find",{"cuit":cuit},function(resp,estado,jqXHR){
                         //console.log(resp);
                         // Parseamos la respuesta para que no sea un string y podamos navegarlo
                         var arrayResp = JSON.parse(resp);
-                        // Aplicamos lo que trajimos para cambiar el placeholder en todos los campos donde sea necesario
+                        // Aplicamos lo que trajimos para cambiar el valor correspondiente de cada campo donde sea necesario
                         $('div.form-group #empresaID').val(arrayResp.data.id);
                         //$('div.form-group #nombre').attr("placeholder",arrayResp.data.nombre);
                         $('div.form-group #nombre').val(arrayResp.data.nombre);
@@ -82,13 +104,9 @@
                         $('div.form-group #rubro').val(arrayResp.data.rubro.nombre);
                         $('div.form-group #titular').val(arrayResp.data.titular);
                         //console.log(arrayResp.data.cuit);
-
-
                       });
                     }
-
-                  });
-                  
+                  });              
                 });
             </script>
               <table id="tabla-empresas" class="table table-bordered table-striped table-hover">
@@ -124,9 +142,7 @@
                   </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse in">
-                  
-                  <div class="box-body">
-                    
+                  <div class="box-body">                 
                     <div class="form-group">
                       <label for="empresaID">ID: </label>
                       <input type="number" required="true" class="form-control input-sm" id="empresaID" name="empresaID" disabled="true" placeholder="ID Empresa" />
