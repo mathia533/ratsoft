@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints as Assert;
 use BackendBundle\Entity\TblEmpresas;
 use BackendBundle\Entity\TblSituacionIva;
+use BackendBundle\Entity\TblProvincias;
+use BackendBundle\Entity\TblRubros;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -20,77 +22,110 @@ class EmpresasController extends Controller
 
 	public function newAction(Request $request) {
 
-		$json = $request->get('json', null);
-		$request = json_decode($json);
+		$respuesta = array (
+			'nombre' => $request->request->get("nombre"),
+			'domicilio' => $request->request->get("domicilio"),
+			'localidad' => $request->request->get("localidad"),
+			'cuit' => $request->request->get("cuit"),
+			'iibb' => $request->request->get("iibb"),
+			'titular' => $request->request->get("titular"),
+			'activo' => $request->request->get("activo"),
+			'iva' => (int)$request->request->get("iva"),
+			'provincia' => $request->request->get("provincia"),
+			'rubro' => $request->request->get("rubro"),
+		);
+		
+		$status = "SUCCESS";
+		$msg = $respuesta;
 
-		if ($json != null) {
-			$nombre = (isset($request->nombre)) ? $request->nombre : null;
-			$domicilio = (isset($request->domicilio)) ? $request->domicilio : null;
-			$localidad = (isset($request->localidad)) ? $request->localidad : null;
-			$cuit = (isset($request->cuit)) ? $request->cuit : null;
-			$iibb = (isset($request->iibb)) ? $request->iibb : null;
-			$titular = (isset($request->titular)) ? $request->titular : null;
-			$activo = (isset($request->activo)) ? $request->activo : null;
-			$iva = (isset($request->iva)) ? $request->iva : null;
-			$provincia = (isset($request->provincia)) ? $request->provincia : null;
-			$rubro = (isset($request->rubro)) ? $request->rubro : null;
+		// Me aseguro que no me hayan mandado ningun campo vacío
+
+		if ( empty($respuesta["nombre"])
+			|| empty($respuesta["domicilio"])
+			|| empty($respuesta["localidad"])
+		 	|| empty($respuesta["cuit"])
+			|| empty($respuesta["iibb"])
+			|| empty($respuesta["titular"])
+			|| empty($respuesta["activo"])
+			|| empty($respuesta["iva"])
+			|| empty($respuesta["provincia"])
+			|| empty($respuesta["rubro"])
+			) {
+				$status = "ERROR";
+				$msg = "No se enviaron todos los datos requeridos para completar la solicitud";
 		}
-
+		
 		$serializer = SerializerBuilder::create()->build();
 
-		// {"nombre":"ratsoft SA", "domicilio":"calle falsa 123", "localidad":"CABA", "cuit":"1111", "iibb":"123456789", "titular":"El gordo Samid", "activo":"1", "iva":"1" ,"provincia":"1", "rubro":"1"}
-
 		$data = array(
-			'status' => 'ERROR',
-			'msg' => 'No se enviaron todos los datos requeridos para completar la solicitud'
+			'status' => $status,
+			'msg' => $msg
 			);
 
-		// Si $rubro es null no se puede completar la solicitud.
-		if (empty($rubro)) {
+		// Busco en la DB si existe una empresa con el cuit ingresado.
+		$em = $this->getDoctrine()->getManager();
+		$isset_empresa = $em->getRepository("BackendBundle:TblEmpresas")->findOneBy(
+			array(
+				'cuit' => $respuesta["cuit"]
+			)
+		);
 
-			$jsonResponse = $serializer->serialize($data, 'json');
-			return new Response($jsonResponse);
-		} else {
-	   	// Busco en la DB si existe una empresa con el cuit ingresado.
-			$em = $this->getDoctrine()->getManager();
-			$isset_empresa = $em->getRepository("BackendBundle:TblEmpresas")->findOneBy(
-				array(
-					'cuit' => $request->cuit
-					));
+		// Genero el objeto SituacionIva y lo cargo en base al ID recibido
+		$situacionIva = new TblSituacionIva();
+		$situacionIva = $em->getRepository("BackendBundle:TblSituacionIva")->findOneBy(
+			array(
+				'id' => $respuesta["iva"]
+			)
+		);
+		// Genero el objeto Provincia y lo cargo en base al ID recibido
+		$provincia = new TblProvincias();
+		$provincia = $em->getRepository("BackendBundle:TblProvincias")->findOneBy(
+			array(
+				'id' => $respuesta["provincia"]
+			)
+		);
+		// Genero el objeto Rubro y lo cargo en base al ID recibido
+		$rubro = new TblRubros();
+		$rubro = $em->getRepository("BackendBundle:TblRubros")->findOneBy(
+			array(
+				'id' => $respuesta["rubro"]
+			)
+		);
 
     	// Si el cuit no existe, se inserta en la DB.
-			if (empty($isset_empresa)) {
-	  		// Instanciamos un objeto Empresa y seteamos sus datos.
-				$empresa = new TblEmpresas();
+		if (empty($isset_empresa)) {
+	  	// Instanciamos un objeto Empresa y seteamos sus datos.
+			$empresa = new TblEmpresas();
 
-				$empresa->setNombre($nombre);
-				$empresa->setDomicilio($domicilio);
-				$empresa->setLocalidad($localidad);
-				$empresa->setCuit($cuit);
-				$empresa->setIibb($iibb);
-				$empresa->setTitular($titular);
-				$empresa->setActivo($activo);
-				$empresa->setIva($iva);
-				$empresa->setProvincia($provincia);
-				$empresa->setRubro($rubro);	
+			$empresa->setNombre($respuesta["nombre"]);
+			$empresa->setDomicilio($respuesta["domicilio"]);
+			$empresa->setLocalidad($respuesta["localidad"]);
+			$empresa->setCuit($respuesta["cuit"]);
+			$empresa->setIibb($respuesta["iibb"]);
+			$empresa->setTitular($respuesta["titular"]);
+			$empresa->setActivo($respuesta["activo"]);
+			$empresa->setIva($situacionIva);
+			$empresa->setProvincia($provincia);
+			$empresa->setRubro($rubro);	
 
-				$em->persist($user);
-				$em->flush();	
+			$em->persist($empresa);
+			$em->flush();	
 
-				$data = array(
-					'status' => 'OK',
-					'msg' => 'La empresa ha sido registrada con exito'
-					);
-			} else {
-				$data = array(
-					'status' => 'ERROR',
-					'msg' => 'Ya existe una empresa registrada con el cuit ingresado'
-					);
-			}
+			$data = array(
+				'status' => 'OK',
+				'msg' => 'La empresa ha sido registrada con exito'
+			);
+		} else {
+			$data = array(
+				'status' => 'ERROR',
+				'msg' => 'Ya existe una empresa registrada con el cuit ingresado'
+			);
 		}
+		
 
 		$jsonResponse = $serializer->serialize($data, 'json');
 		return new Response($jsonResponse);
+
 	}
 
 

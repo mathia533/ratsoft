@@ -13,3 +13,19 @@ backend_user:
 backend_empresas:
   resource: "@BackendBundle/Resources/config/routing/empresas.yml"
   prefix: /empresa
+
+backend_compras:
+  resource: "@BackendBundle/Resources/config/routing/compras.yml"
+  prefix: /compras
+
+backend_rubros:
+  resource: "@BackendBundle/Resources/config/routing/rubros.yml"
+  prefix: /rubros
+
+backend_provincias:
+  resource: "@BackendBundle/Resources/config/routing/provincias.yml"
+  prefix: /provincias
+
+backend_iva:
+  resource: "@BackendBundle/Resources/config/routing/iva.yml"
+  prefix: /iva

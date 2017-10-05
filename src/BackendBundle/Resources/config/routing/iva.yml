@@ -1,0 +1,4 @@
+iva_all:
+    path: /
+    defaults: { _controller: BackendBundle:Iva:all }
+    methods: GET
