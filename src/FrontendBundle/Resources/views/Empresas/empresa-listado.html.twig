@@ -1,9 +1,120 @@
 {% extends 'FrontendBundle::Default/base.html.twig' %}
-
+{% block title %} Contable{% endblock %}
+{% block CSs %}
+  <style>
+    table { width: 50% }
+    tbody tr:hover.active td,
+    tbody tr:hover td {
+      background-color: #A9D0F5;
+      cursor: pointer;
+    }               
+    .table>tbody>tr.active>td {
+      background-color: #A9D0F5;
+      color: #000000;
+      font:  bold 12px/18px Georgia, serif;
+    }
+  </style>              
+{% endblock %}
 {% block Scripts %}
  <!-- DataTables -->
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script>
+  $(document).ready(function() {
+    // armamos el Datatable para traernos la info desde /empresa
+    var table = $('#tabla-empresas').DataTable({
+      "processing": true,
+      "ajax": "/empresa",
+      "columns": [
+        { "data": "nombre"},
+        { "data": "cuit",
+          "className": "cuit"}, //esto es importante, le ponemos una clase a este campo
+        { "data": "iva.detalle"},
+        { "data": "provincia.nombre" }
+        ]
+    });
+
+    // A partir de acá metemos lo que pasa cuando picamos sobre alguna empresa
+    $('#tabla-empresas tbody').on( 'click', 'tr', function () {
+      if ( $(this).hasClass('active') ) {
+        $(this).removeClass('active');
+      }
+      else {
+        table.$('tr.active').removeClass('active');
+        $(this).addClass('active');
+        // metemos en una variable lo que hay en e campo cuit de la empresa seleccionada
+        var cuit = table.$("tr.active").find(".cuit").text();
+        //console.log( cuit );
+        // Mandamos esta variable por post a /empresa/find para traernos toda la info de la empresa y poder volcarla en el panel de la derecha
+        $.post("/empresa/find",{"cuit":cuit},function(resp,estado,jqXHR){
+          //console.log(resp);
+          // Parseamos la respuesta para que no sea un string y podamos navegarlo
+          var arrayResp = JSON.parse(resp);
+          // Aplicamos lo que trajimos para cambiar el valor correspondiente de cada campo donde sea necesario
+          $('div.form-group #empresaID').val(arrayResp.data.id);
+          //$('div.form-group #nombre').attr("placeholder",arrayResp.data.nombre);
+          $('div.form-group #nombre').val(arrayResp.data.nombre);
+          $('div.form-group #domicilio').val(arrayResp.data.domicilio);
+          $('div.form-group #localidad').val(arrayResp.data.localidad);
+          $('div.form-group #provincia').val(arrayResp.data.provincia.nombre);
+          $('div.form-group #iva').val(arrayResp.data.iva.detalle);
+          $('div.form-group #cuit').val(arrayResp.data.cuit);
+          $('div.form-group #ingresosBrutos').val(arrayResp.data.iibb);
+          $('div.form-group #rubro').val(arrayResp.data.rubro.nombre);
+          $('div.form-group #titular').val(arrayResp.data.titular);
+          //console.log(arrayResp.data.cuit);
+        });
+      }
+    }); 
+
+     //llama al modal luego de hacer click en el boton
+      $("#addEmpresa").click(function(){
+            $("#modalAddEmpresa").modal();
+      });
+
+      var provincia = {
+          val1 : 'Salta',
+          val2 : 'Ciudad Autonoma de Buenos Aires'
+      };
+      var cboProvincias = $('#nuevaProvincia');
+      $.each(provincia, function(val, text) {
+          cboProvincias.append(
+              $('<option></option>').val(val).html(text)
+          );
+      });
+
+      var situacionIVAx = {
+          val1 : 'Consumidor Final',
+          val2 : 'Exento'
+      }
+
+      var cboSituacionIVA = $('#nuevaSituacionIVA');
+      $.each(situacionIVAx, function(val, text) {
+          cboSituacionIVA.append(
+              $('<option></option>').val(val).html(text)
+          );
+      });
+      // creo un objeto con rubros 
+      var rubrox = {
+          val1 : 'Textil',
+          val2 : 'Metalurgico'
+      };
+      //inserta en el dropdownlist cada uno de los registros
+      var cboRubros = $('#nuevoRubro');
+      $.each(rubrox, function(val, text) {
+          cboRubros.append(
+              $('<option></option>').val(val).html(text)
+          );
+      });
+
+      $('#nuevaSituacionIVA').change(function(){
+        var option = $(this).find('option:selected').text();
+        $('#nuevoIva').val(option);
+      });
+
+                  
+  });
+</script>
 {% endblock %}
 {% block body %}
   <!-- ACA EMPIEZO A TRABAJAR LA INTERFAZ Content Wrapper. Contains page content -->
@@ -25,7 +136,7 @@
       <!-- Small boxes (Stat box) -->
       <div class="row" style="padding-bottom: 0.5em;">        
           <div class="col-xs-6">
-            <button class="btn btn-danger btn-block">
+            <button class="btn btn-danger btn-block" id="addEmpresa">
               <i class="fa fa-plus-circle" aria-hidden="true"> Agregar Empresa </i> 
             </button>
           </div>
@@ -43,72 +154,7 @@
               <h3 class="box-title">Busque la empresa deseada..</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-              <style>
-                table { width: 50% }
-                tbody tr:hover.active td,
-                tbody tr:hover td {
-                  background-color: #A9D0F5;
-                  cursor: pointer;
-                }               
-                .table>tbody>tr.active>td {
-                  background-color: #A9D0F5;
-                  color: #000000;
-                  font:  bold 12px/18px Georgia, serif;
-                }
-              </style>
-              <script>
-                $(document).ready(function() {
-                  // armamos el Datatable para traernos la info desde /empresa
-                  var table = $('#tabla-empresas').DataTable({
-                    // "lengthchange": false,
-                    // "dom": 'bfrtip',
-                    // "buttons": ['copy', 'csv', 'excel', 'print', 'pdf'],
-                    "processing": true,
-                    "ajax": "/empresa",
-                    "columns": [
-                      { "data": "nombre"},
-                      { "data": "cuit",
-                        "className": "cuit"}, //esto es importante, le ponemos una clase a este campo
-                      { "data": "iva.detalle"},
-                      { "data": "provincia.nombre" },
-                      ]
-                  });
-
-                  // A partir de acá metemos lo que pasa cuando picamos sobre alguna empresa
-                  $('#tabla-empresas tbody').on( 'click', 'tr', function () {
-                    if ( $(this).hasClass('active') ) {
-                      $(this).removeClass('active');
-                    }
-                    else {
-                      table.$('tr.active').removeClass('active');
-                      $(this).addClass('active');
-                      // metemos en una variable lo que hay en e campo cuit de la empresa seleccionada
-                      var cuit = table.$("tr.active").find(".cuit").text();
-                      //console.log( cuit );
-                      // Mandamos esta variable por post a /empresa/find para traernos toda la info de la empresa y poder volcarla en el panel de la derecha
-                      $.post("/empresa/find",{"cuit":cuit},function(resp,estado,jqXHR){
-                        //console.log(resp);
-                        // Parseamos la respuesta para que no sea un string y podamos navegarlo
-                        var arrayResp = JSON.parse(resp);
-                        // Aplicamos lo que trajimos para cambiar el valor correspondiente de cada campo donde sea necesario
-                        $('div.form-group #empresaID').val(arrayResp.data.id);
-                        //$('div.form-group #nombre').attr("placeholder",arrayResp.data.nombre);
-                        $('div.form-group #nombre').val(arrayResp.data.nombre);
-                        $('div.form-group #domicilio').val(arrayResp.data.domicilio);
-                        $('div.form-group #localidad').val(arrayResp.data.localidad);
-                        $('div.form-group #provincia').val(arrayResp.data.provincia.nombre);
-                        $('div.form-group #iva').val(arrayResp.data.iva.detalle);
-                        $('div.form-group #cuit').val(arrayResp.data.cuit);
-                        $('div.form-group #ingresosBrutos').val(arrayResp.data.iibb);
-                        $('div.form-group #rubro').val(arrayResp.data.rubro.nombre);
-                        $('div.form-group #titular').val(arrayResp.data.titular);
-                        //console.log(arrayResp.data.cuit);
-                      });
-                    }
-                  });              
-                });
-            </script>
+            <div class="box-body">              
               <table id="tabla-empresas" class="table table-bordered table-striped table-hover">
                 <thead>                  
                   <tr>
@@ -167,17 +213,6 @@
                     </div>
                     <div class="form-group">
                       <label for="situacionIVACompleto">Situacion IVA: </label>
-                      <!--                      
-                      <div class="input-sm"> 
-                        <select name="situacionIVA" required="true" class="selectpicker dropdown-toggle" type="button" data-toggle="dropdown" disabled="true">
-                          <option disabled selected value>--Seleccione una opcion--</option>  
-                          <option>Opcion 1</option>
-                          <option>Opcion 2</option>
-                          <option>Opcion 3</option>
-                        </select>
-                      </div>
-                      <br>
-                      -->                
                       <input type="text" class="form-control input-sm" id="iva" name="situacionIVACompleto" disabled="true" placeholder="Situacion IVA descripcion completa" /> 
                     </div>
                     <div class="form-group">
@@ -232,4 +267,107 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <!-- MODAL ADD EMPRESA -->
+  <div class="modal fade" id="modalAddEmpresa" role="dialog">
+    <div class="modal-dialog">              
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Nueva Empresa</h4>
+        </div>
+        <div class="modal-body">          
+          <h4>Datos de la empresa</h4>                
+          <div class="form-group">
+            <label for="nuevoNombre">Nombre: </label>
+            <input type="text" required="true" class="form-control input-sm" id="nuevonombre" name="nuevoNombre"
+            placeholder="Nombre Empresa"/>   
+          </div>
+          <div class="form-group">
+            <label for="nuevoDomicilio">Domicilio: </label>                  
+            <input type="text" required="true" class="form-control input-sm" id="nuevoDomicilio" name="nuevoDomicilio"
+            placeholder="Domicilio Empresa"/>
+          </div>
+          <div class="form-group">
+            <label for="nuevaLocalidad">Localidad: </label>                    
+            <input type="text" class="form-control input-sm" id="nuevaLocalidad" name="nuevaLocalidad" placeholder="Localidad empresa"/>                    
+          </div>
+          <div class="form-group">
+            <div class="col-xs-3" style="padding-left: 0px">
+                   <label for="nuevaProvincia">Provincia: </label>
+              </div>
+              <div class="col-xs-9  input-sm">                             
+                <select name="nuevaProvincia" id="nuevaProvincia" required="true" class="selectpicker dropdown-toggle form-control input-sm" type="button" data-toggle="dropdown">
+                  <option disabled selected value>--Seleccione una opcion--</option>  
+                 <!--  <option>Opcion 1</option>
+                  <option>Opcion 2</option>
+                  <option>Opcion 3</option> -->
+                </select>
+              </div>                     
+          </div>
+          &nbsp 
+          <div class="form-group">               
+              <div class="col-xs-3" style="padding-left: 0px">
+                  <label for="nuevaSituacionIVA">Situacion IVA: </label>
+              </div>
+              <div class="col-xs-9  input-sm">                             
+                <select name="nuevaSituacionIVA" id="nuevaSituacionIVA" required="true" class="selectpicker dropdown-toggle form-control input-sm" type="button" data-toggle="dropdown">
+                  <option disabled selected value>--Seleccione una opcion--</option>  
+                  <!-- <option>Opcion 1</option>
+                  <option>Opcion 2</option>
+                  <option>Opcion 3</option> -->
+                </select>
+              </div> 
+              &nbsp                                                           
+              <input type="text"  class="form-control input-sm" id="nuevoIva" name="situacionIVACompleto" 
+              disabled="true" placeholder="Situacion IVA descripcion completa" />                                 
+          </div>                      
+          <div class="form-group">
+            <label for="nuevoCuit">Cuit: </label>                    
+            <input type="number" required="true" class="form-control input-sm" id="nuevoCuit" name="nuevoCuit" placeholder="Cuit"/>
+          </div> 
+          <div class="form-group">
+            <label for="nuevoIngresosBrutos">Ingresos Brutos: </label>                  
+            <input type="text" required="true" class="form-control input-sm" id="nuevoIngresosBrutos" name="nuevoIngresosBrutos" placeholder="Ingresos Brutos"/>  
+          </div>
+          <div class="form-group">               
+                <div class="col-xs-3" style="padding-left: 0px;">
+                    <label for="nuevoRubro">Rubro: </label>
+                </div>
+                <div class="col-xs-9">                             
+                  <select name="nuevoRubro" id="nuevoRubro" required="true" class="selectpicker dropdown-toggle form-control input-sm" 
+                  type="button" data-toggle="dropdown">
+                    <option disabled selected value>--Seleccione una opcion--</option>  
+                    <!-- <option>Opcion 1</option>
+                    <option>Opcion 2</option>
+                    <option>Opcion 3</option> -->
+                  </select>
+                </div>                                
+          </div>
+          <div class="form-group">
+            <label for="nuevoTitular">Titular: </label>
+            <input type="text" class="form-control input-sm" id="nuevoTitular" name="nuevoTitular" placeholder="Titular"/>
+          </div>
+          <h4>Datos de Contacto</h4>
+          <div class="form-group">
+            <label for="nuevoEmail">Email: </label>
+            <input type="email" required="true" class="form-control input-sm" id="nuevoEmail" name="nuevoEmail" placeholder="Email"/>   
+          </div>
+          <div class="form-group">
+            <label for="nuevoTelefono">Telefono: </label>
+            <input type="number" required="true" class="form-control input-sm" id="nuevoTelefono" name="nuevoTelefono" placeholder="Telefono"/>  
+          </div>
+          <div class="form-group">
+            <label for="nuevoFax">Fax: </label>                    
+            <input type="number" required="true" class="form-control input-sm" id="nuevoFax" name="nuevoFax" placeholder="Fax"/> 
+          </div>      
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="newEmpresa" data-dismiss="modal">Guardar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>                
+    </div>
+  </div>
+  <!-- /MODAL ADD EMPRESA -->
 {% endblock %}
