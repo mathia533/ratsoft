@@ -2,3 +2,8 @@ compras_all:
     path: /{id}
     defaults: { _controller: BackendBundle:Compras:all }
     methods: GET
+
+compras_new:
+    path: /{id}/new
+    defaults: { _controller: BackendBundle:Compras:new }
+    methods: POST

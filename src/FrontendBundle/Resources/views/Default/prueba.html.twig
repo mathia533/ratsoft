@@ -6,50 +6,17 @@
 <body>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-          
-          var cuit = "20123456773";
-          var url = '../empresa/find';
+    
 
-          $.post(url,{"cuit":cuit},function(resp,estado,jqXHR){
-            console.log(resp);
-          })
-        });
+
+
+
+    <script src="{{ asset('ratsoft/ratsoft.js') }}"></script>
+    <script>
+        $(document).ready(comboFill("/rubros","id","nombre","#combo"));
     </script>
-    <table id="example1" class="display" cellspacing="0" width="100%">
-    	<thead>
-            <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>domicilio</th>
-                <!-- <th>localidad</th>
-                <th>cuit</th>
-                <th>iibb</th>
-                <th>titular</th>
-                <th>activo</th>
-                <th>iva</th>
-                <th>provincia</th>
-                <th>rubro</th> 
-            	-->
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>domicilio</th>
-                <!-- <th>localidad</th>
-                <th>cuit</th>
-                <th>iibb</th>
-                <th>titular</th>
-                <th>activo</th>
-                <th>iva</th>
-                <th>provincia</th>
-                <th>rubro</th>
-            	-->
-            </tr>
-        </tfoot>
-    </table>
+    <select id="combo"></select>
+
+    
 </body>
 </html>
