@@ -78,8 +78,12 @@
       comboFill("/rubros","id","nombre","#nuevoRubro")
 
       $('#nuevaSituacionIVA').change(function(){
-        var option = $(this).find('option:selected').text();
-        $('#nuevoIva').val(option);
+        var option = $(this).find('option:selected').val();
+        $.get("/iva/"+option,function(resp,estado,jqXHR){
+                var arrayResp = JSON.parse(resp);
+                var obj = arrayResp.data[0];
+                $('#nuevoIva').val(obj["detalle"]);
+        });
       });
 
                   
