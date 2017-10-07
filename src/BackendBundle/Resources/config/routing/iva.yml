@@ -2,3 +2,8 @@ iva_all:
     path: /
     defaults: { _controller: BackendBundle:Iva:all }
     methods: GET
+
+iva_findById:
+    path: /{id}
+    defaults: { _controller: BackendBundle:Iva:findById }
+    methods: GET

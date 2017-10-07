@@ -32,5 +32,24 @@ class IvaController extends Controller
 		return new Response($jsonResponse);		
 		
 	}
+	/**
+	*	@Route("/iva/{id}",name="iva_findById")
+	*	@Method({"GET"})
+	*/
+
+	public function findByIdAction($id,Request $request){
+    	$em = $this->getDoctrine()->getManager();
+		$result = $em->getRepository("BackendBundle:TblSituacionIva")->findBy(array('id' => $id));
+		$data = array(
+			'draw' => '',
+			'recordsTotal' => '',
+			'recordsFiltered' => '',
+			'data' => $result,
+		);
+		$serializer = SerializerBuilder::create()->build();
+		$jsonResponse = $serializer->serialize($data, 'json');
+		return new Response($jsonResponse);		
+		
+	}
 }
 ?>

@@ -14,11 +14,9 @@ var comboFill = function(url,value,text,cssid) {
             this.text = text;
             this.cssid = cssid;
             $.get(url,function(resp,estado,jqXHR){
-                console.log(resp);
                 var arrayResp = JSON.parse(resp);
                 var opciones = "";
                 var obj = arrayResp.data[0];
-                console.log(obj[value]);
                 arrayResp.data.forEach(
                     function(item,index){
                         var obj = arrayResp.data[index];

@@ -14,6 +14,14 @@
     <script src="{{ asset('ratsoft/ratsoft.js') }}"></script>
     <script>
         $(document).ready(comboFill("/rubros","id","nombre","#combo"));
+        
+
+        $.get("/iva/1",function(resp,estado,jqXHR){
+                var arrayResp = JSON.parse(resp);
+                var obj = arrayResp.data[0];
+                console.log(obj["detalle"]);
+        });
+
     </script>
     <select id="combo"></select>
 
