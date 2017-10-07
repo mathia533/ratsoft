@@ -48,7 +48,7 @@
         //console.log( cuit );
         // Mandamos esta variable por post a /empresa/find para traernos toda la info de la empresa y poder volcarla en el panel de la derecha
         $.post("/empresa/find",{"cuit":cuit},function(resp,estado,jqXHR){
-          //console.log(resp);
+          console.log(resp);
           // Parseamos la respuesta para que no sea un string y podamos navegarlo
           var arrayResp = JSON.parse(resp);
           // Aplicamos lo que trajimos para cambiar el valor correspondiente de cada campo donde sea necesario
@@ -80,6 +80,47 @@
       $('#nuevaSituacionIVA').change(function(){
         var option = $(this).find('option:selected').text();
         $('#nuevoIva').val(option);
+      });
+
+      $("#newEmpresa").click(function(){
+            // alert("Guardar");
+
+                var nombre = $('div.modal-body div.form-group #nuevoNombre').val();
+                var domicilio = $('div.modal-body div.form-group #nuevoDomicilio').val();
+                var localidad = $('div.modal-body div.form-group #nuevaLocalidad').val();
+                var provincia = $('div.modal-body div.form-group #nuevaProvincia').val();
+                var iva = $('div.modal-body div.form-group #nuevoIva').val();
+                var cuit = $('div.modal-body div.form-group #nuevoCuit').val();
+                var iibb = $('div.modal-body div.form-group #uevoIngresosBrutos').val();
+                var rubro = $('div.modal-body div.form-group #nuevoRubro').val();
+                var titular = $('div.modal-body div.form-group #nuevoTitular').val();
+                var nuevoMail = $('div.modal-body div.form-group #nuevoEmail').val();
+                var fax = $('div.modal-body div.form-group #nuevoFax');
+                var telefono = $('div.modal-body div.form-group #nuevoTelefono');
+
+            $.post("/empresa/new",{
+                nombre: "nombre", 
+                domicilio: "domicilio", 
+                localidad: "localidad",
+                provincia: "provincia",
+                iva: "iva", 
+                cuit: "cuit",
+                iibb: "iibb",
+                rubro:"rubro" }, function(response){
+                  console.log(response);
+                  alert(response);   
+                });
+
+            //     "nombre" : nombre , 
+            //     "domicilio" : domicilio, 
+            //     "localidad" : localidad,
+            //     "provincia" : provincia,
+            //     "iva" : iva, 
+            //     "cuit" : cuit,
+            //     "iibb" : iibb,
+            //     "rubro" : rubro });
+
+             
       });
 
                   
@@ -250,7 +291,7 @@
           <h4>Datos de la empresa</h4>                
           <div class="form-group">
             <label for="nuevoNombre">Nombre: </label>
-            <input type="text" required="true" class="form-control input-sm" id="nuevonombre" name="nuevoNombre"
+            <input type="text" required="true" class="form-control input-sm" id="nuevoNombre" name="nuevoNombre"
             placeholder="Nombre Empresa"/>   
           </div>
           <div class="form-group">
