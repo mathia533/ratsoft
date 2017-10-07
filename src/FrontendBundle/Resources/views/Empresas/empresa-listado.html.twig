@@ -19,6 +19,7 @@
  <!-- DataTables -->
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('ratsoft/ratsoft.js') }}"></script>
 <script>
   $(document).ready(function() {
     // armamos el Datatable para traernos la info desde /empresa
@@ -72,40 +73,9 @@
             $("#modalAddEmpresa").modal();
       });
 
-      var provincia = {
-          val1 : 'Salta',
-          val2 : 'Ciudad Autonoma de Buenos Aires'
-      };
-      var cboProvincias = $('#nuevaProvincia');
-      $.each(provincia, function(val, text) {
-          cboProvincias.append(
-              $('<option></option>').val(val).html(text)
-          );
-      });
-
-      var situacionIVAx = {
-          val1 : 'Consumidor Final',
-          val2 : 'Exento'
-      }
-
-      var cboSituacionIVA = $('#nuevaSituacionIVA');
-      $.each(situacionIVAx, function(val, text) {
-          cboSituacionIVA.append(
-              $('<option></option>').val(val).html(text)
-          );
-      });
-      // creo un objeto con rubros 
-      var rubrox = {
-          val1 : 'Textil',
-          val2 : 'Metalurgico'
-      };
-      //inserta en el dropdownlist cada uno de los registros
-      var cboRubros = $('#nuevoRubro');
-      $.each(rubrox, function(val, text) {
-          cboRubros.append(
-              $('<option></option>').val(val).html(text)
-          );
-      });
+      comboFill("/provincias","id","nombre","#nuevaProvincia")
+      comboFill("/iva","id","codigo","#nuevaSituacionIVA")
+      comboFill("/rubros","id","nombre","#nuevoRubro")
 
       $('#nuevaSituacionIVA').change(function(){
         var option = $(this).find('option:selected').text();
